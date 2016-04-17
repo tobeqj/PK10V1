@@ -45,66 +45,55 @@
         _wrongTimeCounter1 = getWrongTimeCounter();
         _wrongTimeCounter2 = getWrongTimeCounter();
         // 获取今天的开奖历史
-        awardDataService.getTodayAwardResults(function (datas) {
-            var records = [];
-            if (datas.length > 0) {
-                _currentPeriodNumber = datas[0].periodNumber;
-            }
-            // 数据是按倒序排列的，为了计算剩余次数，先反转顺序
-            datas.reverse();
-            // 遍历结果集构造表格数据;
-            $(datas).each(function (i, data) {
-                var record = convetToTableRecord(data);
-                records.push(record);
-            });
-            //获取最新一期的开奖数据
-            awardDataService.getCurrentAwardResult(function (data) {
-                _nextAwardTime = data.next.awardTime;
-                if (!_currentPeriodNumber || data.current.periodNumber > _currentPeriodNumber) {
-                    _currentPeriodNumber = data.current.periodNumber;
-                    var today = new Date().format("yyyy-MM-dd");
-                    if (data.current.awardTime.format("yyyy-MM-dd") === today) {
-                        // 将近期开奖数据添加到结果集中
-                        var record = convetToTableRecord(data.current);
-                        records.push(record);
-                    }
+        var getTodayAwardResults = function(){
+            awardDataService.getTodayAwardResults(function (datas) {
+                var records = [];
+                if (datas.length > 0) {
+                    _currentPeriodNumber = datas[0].periodNumber;
                 }
-                // 按倒序排列结果
-                records.reverse();
-                if (success) success(records);;
+                // 数据是按倒序排列的，为了计算剩余次数，先反转顺序
+                datas.reverse();
+                // 遍历结果集构造表格数据;
+                $(datas).each(function (i, data) {
+                    var record = convetToTableRecord(data);
+                    records.push(record);
+                });
+                //获取最新一期的开奖数据
+                awardDataService.getCurrentAwardResult(function (data) {
+                    _nextAwardTime = data.next.awardTime;
+                    if (!_currentPeriodNumber || data.current.periodNumber > _currentPeriodNumber) {
+                        _currentPeriodNumber = data.current.periodNumber;
+                        var today = new Date().format("yyyy-MM-dd");
+                        if (data.current.awardTime.format("yyyy-MM-dd") === today) {
+                            // 将近期开奖数据添加到结果集中
+                            var record = convetToTableRecord(data.current);
+                            records.push(record);
+                        }
+                    }
+                    // 按倒序排列结果
+                    records.reverse();
+                    if (success) success(records);;
+                }, function (err) {
+                    window.plugins.toast.showLongCenter("获取本期开奖数据失败！");
+                    // 按倒序排列结果
+                    records.reverse();
+                    if (success) success(records);
+                });
             }, function (err) {
-                window.plugins.toast.showLongCenter("获取本期开奖数据失败！");
-                // 按倒序排列结果
-                records.reverse();
-                if (success) success(records);
+                window.plugins.toast.showLongCenter("获取开奖数据失败，请检查网络是否开启。");
+                if (error) error(err);
             });
-        }, function (err) {
-            window.plugins.toast.showLongCenter("获取开奖数据失败，请检查网络是否开启。");
-            if (error) error(err);
-        });
-    };
-    
-    var timedTask = function () {
-        awardDataService.getCurrentAwardResult(function (data) {
-            if (data.current.periodNumber > _currentPeriodNumber
-                && data.current.awardTime.getTime() >= _nextAwardTime.getTime()) {
-                _currentPeriodNumber = data.current.periodNumber;
-                _nextAwardTime = data.next.awardTime;
-                // 将近期开奖数据添加到结果集中
-                var record = convetToTableRecord(data.current);
-                if (_timedAction) _timedAction(record);
+        };
+        // 获取昨天最后一期的数据
+        awardDataService.getYesterdayLastAwardResult(function(result){
+            if(result && result.awardNumbers){
+                _prevAwardNums = result.awardNumbers;
             }
+            getTodayAwardResults();
+        }, function(){
+            getTodayAwardResults();
         });
-    };
 
-    var startTimedTask = function () {
-        if (_timer) clearInterval(_timer);
-        _timer = setInterval(function () {
-            var currentTime = new Date();
-            if (currentTime.getTime() >= _nextAwardTime.getTime()) {
-                timedTask();
-            }
-        }, 1000);
     };
 
     // 将开奖数据转化成表格记录数据
@@ -171,6 +160,29 @@
         _prevAwardNums = currentAwardNumbers;
         return record;
     };
+
+    var timedTask = function () {
+        awardDataService.getCurrentAwardResult(function (data) {
+            if (data.current.periodNumber > _currentPeriodNumber
+                && data.current.awardTime.getTime() >= _nextAwardTime.getTime()) {
+                _currentPeriodNumber = data.current.periodNumber;
+                _nextAwardTime = data.next.awardTime;
+                // 将近期开奖数据添加到结果集中
+                var record = convetToTableRecord(data.current);
+                if (_timedAction) _timedAction(record);
+            }
+        });
+    };
+
+    var startTimedTask = function () {
+        if (_timer) clearInterval(_timer);
+        _timer = setInterval(function () {
+            var currentTime = new Date();
+            if (currentTime.getTime() >= _nextAwardTime.getTime()) {
+                timedTask();
+            }
+        }, 1000);
+    };
     
     var properties = {
         /*
@@ -181,14 +193,14 @@
         getTableData: function(setting, success, error) {
             _cycle = setting.cycle;
             _settings = setting.settings;
-            return getTableData(success, error);
+            getTableData(success, error);
         },
         /*
         @function 开启定时获取最新数据任务
         @param
         @return
         */
-        startTimedTask: function(timedAction) {
+        timedGetData: function(timedAction) {
             _timedAction = timedAction;
             startTimedTask();
         }

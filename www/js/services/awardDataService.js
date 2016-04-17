@@ -15,7 +15,24 @@
             dataType: 'json',
             success: function(data) {
                 if (data && data.success) {
-                    if (success) success(data);
+                    var results = [];
+                    var convertToAwardResult = function (row) {
+                        var periodNumber = Number(row.termNum);
+                        var awardTime = new Date(row.lotteryTime);
+                        var awardNumbers = [];
+                        for (var i = 1; i <= 10; i++) {
+                            var num = Number(row["n" + i]);
+                            awardNumbers.push(num);
+                        }
+                        return new AwardResult(periodNumber, awardTime, awardNumbers);
+                    };
+                    if(data.rows){
+                        $(data.rows).each(function(i, row) {
+                            var result = convertToAwardResult(row);
+                            results.push(result);
+                        });
+                    }
+                    if (success) success(results);
                 } else {
                     var msg = "调用接口{0}获取数据失败！\n".format(url);
                     msg += "返回数据：" + JSON.stringify(data);
@@ -69,22 +86,7 @@
         @return
         */
         getTodayAwardResults: function (success, error) {
-            getAwardDataByDate(new Date, function (data) {
-                var results = [];
-                var convertToAwardResult = function (row) {
-                    var periodNumber = Number(row.termNum);
-                    var awardTime = new Date(row.lotteryTime);
-                    var awardNumbers = [];
-                    for (var i = 1; i <= 10; i++) {
-                        var num = Number(row["n" + i]);
-                        awardNumbers.push(num);
-                    }
-                    return new AwardResult(periodNumber, awardTime, awardNumbers);
-                };
-                $(data.rows).each(function(i, row) {
-                    var result = convertToAwardResult(row);
-                    results.push(result);
-                });
+            getAwardDataByDate(new Date, function (results) {
                 if (success) success(results);
             }, error);
         },
@@ -112,7 +114,23 @@
             }, error);
         },
         /*
-        @function 获取最新一期开奖数据
+         @function 获取昨天最后一期的开奖结果
+         @param
+         @return
+         */
+        getYesterdayLastAwardResult: function(success, error){
+            var curDate = new Date();
+            var preDate = new Date(curDate.getTime() - 24*60*60*1000);
+            getAwardDataByDate(preDate, function (results) {
+                var lastAwardResult = null;
+                if(results.length){
+                    lastAwardResult = results.pop();
+                }
+                if (success) success(lastAwardResult);
+            }, error);
+        },
+        /*
+        @function 获取指定号码的位置
         @param
         @return
         */

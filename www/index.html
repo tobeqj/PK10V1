@@ -22,6 +22,7 @@
     <script src="js/dal/settingDal.js"></script>
     <script src="js/services/settingService.js"></script>
     <script src="js/services/awardDataService.js"></script>
+    <script src="js/services/homeService.js"></script>
     <script src="js/controller/settingMgr.js"></script>
     <script src="js/controller/homeMgr.js"></script>
 
@@ -131,14 +132,14 @@
                 onSlidePrevStart: function (swiper) {
                     var prevPage = getPrevPage();
                     if (prevPage) {
-                        showPage(prevPage);
+                        onShowPage(prevPage);
                         _currentPage = prevPage;
                     }
                 },
                 onSlideNextStart: function (swiper) {
                     var nextPage = getNextPage();
                     if (nextPage) {
-                        showPage(nextPage);
+                        onShowPage(nextPage);
                         _currentPage = nextPage;
                     }
                 }
@@ -187,36 +188,42 @@
         };
 
         var showPage = function (page) {
+            onShowPage(page);
+            var pageIndex = page.parent('.swiper-slide').index();
+            _mySwiper.slideTo(pageIndex, 100, false);
+        };
+
+        var onShowPage = function(page){
             var src = '';
             var pageId = page.attr('id');
             switch (pageId) {
-            case "homePage":
-                src = 'home.html';
-                $('#titleHome').show();
-                $('#titleHistory').hide();
-                $('#titleSetting').hide();
-                $('#btnHome').addClass('ui-btn-active');
-                $('#btnHistory').removeClass('ui-btn-active');
-                $('#btnSetting').removeClass('ui-btn-active');
-                break;
-            case "settingPage":
-                src = 'setting.html';
-                $('#titleHome').hide();
-                $('#titleHistory').hide();
-                $('#titleSetting').show();
-                $('#btnSetting').addClass('ui-btn-active');
-                $('#btnHistory').removeClass('ui-btn-active');
-                $('#btnHome').removeClass('ui-btn-active');
-                break;
-            case "historyPage":
-                src = 'history.html';
-                $('#titleHome').hide();
-                $('#titleHistory').show();
-                $('#titleSetting').hide();
-                $('#btnHistory').addClass('ui-btn-active');
-                $('#btnHome').removeClass('ui-btn-active');
-                $('#btnSetting').removeClass('ui-btn-active');
-                break;
+                case "homePage":
+                    src = 'home.html';
+                    $('#titleHome').show();
+                    $('#titleHistory').hide();
+                    $('#titleSetting').hide();
+                    $('#btnHome').addClass('ui-btn-active');
+                    $('#btnHistory').removeClass('ui-btn-active');
+                    $('#btnSetting').removeClass('ui-btn-active');
+                    break;
+                case "settingPage":
+                    src = 'setting.html';
+                    $('#titleHome').hide();
+                    $('#titleHistory').hide();
+                    $('#titleSetting').show();
+                    $('#btnSetting').addClass('ui-btn-active');
+                    $('#btnHistory').removeClass('ui-btn-active');
+                    $('#btnHome').removeClass('ui-btn-active');
+                    break;
+                case "historyPage":
+                    src = 'history.html';
+                    $('#titleHome').hide();
+                    $('#titleHistory').show();
+                    $('#titleSetting').hide();
+                    $('#btnHistory').addClass('ui-btn-active');
+                    $('#btnHome').removeClass('ui-btn-active');
+                    $('#btnSetting').removeClass('ui-btn-active');
+                    break;
             }
 
             if (page.html().length == 0) {
@@ -233,10 +240,7 @@
                     }
                 });
             }
-
-            var pageIndex = page.parent('.swiper-slide').index();
-            _mySwiper.slideTo(pageIndex, 100, false);
-        };
+        }
 
         var showDefaultPage = function() {
             // 如果还没有设置信息，开启程序时默认打开设置页面，否则，默认打开首页
