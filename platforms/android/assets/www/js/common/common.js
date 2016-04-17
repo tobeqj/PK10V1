@@ -68,6 +68,10 @@ Date.prototype.format = function(fmt) { //author: meizz
     return fmt;
 };
 
+Date.prototype.addDays = function(days){
+    return new Date(this.getTime() + 24*60*60*1000*days);
+}
+
 // 获取元素在数组中的索引
 Array.prototype.indexOf = function (item, comparator) {
     comparator = comparator || function(a, b) { return a === b; };

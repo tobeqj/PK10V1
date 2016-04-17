@@ -79,15 +79,29 @@
         return awardNumbers[position - 1];
     };
     
-    var properties = {     
+    var properties = {
         /*
-        @function 获取今天的开奖数据
+        @function 获取指定日期的开奖数据
         @param
         @return
-        */
-        getTodayAwardResults: function (success, error) {
-            getAwardDataByDate(new Date, function (results) {
+         */
+        getAwardResultsByDate: function(date, success, error){
+            getAwardDataByDate(date, function (results) {
                 if (success) success(results);
+            }, error);
+        },
+        /*
+        @function 获取指定日期最后一期开奖数据
+        @param
+        @return
+         */
+        getLastAwardResultByDate:function(date, success, error){
+            getAwardDataByDate(date, function (results) {
+                var lastAwardResult = null;
+                if(results.length){
+                    lastAwardResult = results.pop();
+                }
+                if (success) success(lastAwardResult);
             }, error);
         },
         /*
@@ -111,22 +125,6 @@
                 result.next.awardTime = new Date(data.next.awardTime);
                 result.next.periodNumber = Number(data.next.periodNumber);
                 if (success) success(result);
-            }, error);
-        },
-        /*
-         @function 获取昨天最后一期的开奖结果
-         @param
-         @return
-         */
-        getYesterdayLastAwardResult: function(success, error){
-            var curDate = new Date();
-            var preDate = new Date(curDate.getTime() - 24*60*60*1000);
-            getAwardDataByDate(preDate, function (results) {
-                var lastAwardResult = null;
-                if(results.length){
-                    lastAwardResult = results.pop();
-                }
-                if (success) success(lastAwardResult);
             }, error);
         },
         /*

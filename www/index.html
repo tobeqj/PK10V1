@@ -18,14 +18,16 @@
     <script src="js/common/Dictionary.js"></script>
     <script src="js/common/fileHelper.js"></script>
     <script src="js/common/logger.js"></script>
+    <script src="js/common/maskUtil.js"></script>
     <script src="js/dal/dbHelper.js"></script>
     <script src="js/dal/settingDal.js"></script>
     <script src="js/services/settingService.js"></script>
     <script src="js/services/awardDataService.js"></script>
+    <script src="js/services/awardTableService.js"></script>
     <script src="js/services/homeService.js"></script>
     <script src="js/controller/settingMgr.js"></script>
     <script src="js/controller/homeMgr.js"></script>
-
+    <script src="js/controller/historyMgr.js"></script>
     <style type="text/css">     
         .mask {       
             position: absolute; top: 0px; filter: alpha(opacity=60); background-color: #777;     
@@ -47,8 +49,7 @@
     <div id="titleHome" data-role="header" data-position="fixed" data-tap-toggle="false">
         <a id="btnTool" href="#toolPanel" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>                
         <h1><span id="Span4">主页</span></h1>
-        <a id="btnRefresh" class="ui-btn-right ui-btn ui-icon-recycle ui-btn-icon-notext ui-corner-all ui-shadow"></a>                
-
+        <a id="btnRefresh" class="ui-btn-right ui-btn ui-icon-recycle ui-btn-icon-notext ui-corner-all ui-shadow"></a>
     </div>
     <div id="titleSetting" data-role="header" data-position="fixed" data-tap-toggle="false" style="display: none">
         <a id="btnClear" href="#" class="ui-btn-left ui-btn ui-icon-delete ui-btn-icon-left" style="display: none">清空</a>        
@@ -83,20 +84,13 @@
     <script type="text/javascript">
         var _currentPage;
         var _mySwiper;
-        var _setting;
         document.addEventListener("deviceready", onDeviceReady);
         document.addEventListener("backbutton", onBackBtnDown);
 
-        $('#btnRefresh').click(function () {
-            settingService.getLastSetting(function (result) {
-                showMask();
-                _setting = result;
-                pk10.homeMgr.initPage(_setting, hideMask, hideMask);
-            });
-        });
-
-        // 注：此处不能用var onDeviceReady = function的形式初始化
-        // 不然要把document.addEventListener的语句放在后面
+        /*
+        * 注：此处不能用var onDeviceReady = function的形式初始化
+        * 不然要把document.addEventListener的语句放在后面
+        */
         function onDeviceReady () {
             initSwiper();
             initNavbar();
@@ -231,11 +225,14 @@
                     page.trigger("create"); // 重新渲染jquery mobile样式
                     switch(pageId) {
                         case "homePage":
-                            showMask();
-                            pk10.homeMgr.initPage(_setting, hideMask, hideMask);
+                            maskUtil.showMask();
+                            pk10.homeMgr.initPage();
                             break;
                         case "settingPage":
-                            pk10.settingMgr.initPage(_setting);
+                            pk10.settingMgr.initPage();
+                            break;
+                        case "historyPage":
+                            pk10.historyMgr.initPage();
                             break;
                     }
                 });
@@ -246,7 +243,6 @@
             // 如果还没有设置信息，开启程序时默认打开设置页面，否则，默认打开首页
             settingService.getLastSetting(function(result) {
                 if (result) {
-                    _setting = result;
                     _currentPage = $('#homePage');
                 } else {
                     _currentPage = $('#settingPage');
@@ -257,18 +253,7 @@
                 showPage(_currentPage);
             });
         };
-        
-        //显示遮罩层    
-        function showMask() {
-            $("#mask").css("height", $(document).height());
-            $("#mask").css("width", $(document).width());
-            $("#mask").show();
-        }
-        
-        //隐藏遮罩层  
-        function hideMask() {
-            $("#mask").hide();
-        }
+
     </script>
 </body>
 

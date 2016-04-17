@@ -89,37 +89,39 @@ pk10.settingMgr = function() {
         }
     };
 
-    var initData = function(data) {
-        if (data && data.settings) {
-            setEditable(false);
-            var cycle = data.cycle;
-            var settings = data.settings;
-            $('#cycle').val(cycle);
-            $(settings).each(function(i, setting) {
-                if (setting.danshuang) {
-                    $('input:radio[name="danshuang' + setting.num + '"][value="' + setting.danshuang + '"]')
-                        .attr('checked', true).checkboxradio("refresh");
-                }
-                if (setting.daxiao) {
-                    $('input:radio[name="daxiao' + setting.num + '"][value="' + setting.daxiao + '"]')
-                        .attr('checked', true).checkboxradio("refresh");
-                }
-            });
-        } else {
+    var initData = function() {
+        settingService.getLastSetting(function (result) {
+            if (result) {
+                setEditable(false);
+                var cycle = result.cycle;
+                var settings = result.settings;
+                $('#cycle').val(cycle);
+                $(settings).each(function(i, setting) {
+                    if (setting.danshuang) {
+                        $('input:radio[name="danshuang' + setting.num + '"][value="' + setting.danshuang + '"]')
+                            .attr('checked', true).checkboxradio("refresh");
+                    }
+                    if (setting.daxiao) {
+                        $('input:radio[name="daxiao' + setting.num + '"][value="' + setting.daxiao + '"]')
+                            .attr('checked', true).checkboxradio("refresh");
+                    }
+                });
+            } else {
+                setEditable(true);
+            }
+        }, function(){
+            window.plugin.toast.showShortCenter("获取设置信息失败！");
             setEditable(true);
-        }
+        });
     };
 
     var properties = {
-        initPage: function (setting) {
-            initData(setting);
+        initPage: function () {
+            initData();
             initRadio();
             initCompleteBtn();
             initClearBtn();
             initResetBtn();
-        },
-        getLastSetting: function(success, error) {
-            getLastSetting(success, error);
         }
     };
 
