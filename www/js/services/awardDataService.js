@@ -37,7 +37,7 @@
                     var msg = "调用接口{0}获取数据失败！\n".format(url);
                     msg += "返回数据：" + JSON.stringify(data);
                     logger.log(new Log(msg, LogType.error));
-                    error(data);
+                    if(error) error(data);
                 }
             },
             error: function(err) {
@@ -86,9 +86,7 @@
         @return
          */
         getAwardResultsByDate: function(date, success, error){
-            getAwardDataByDate(date, function (results) {
-                if (success) success(results);
-            }, error);
+            getAwardDataByDate(date, success, error);
         },
         /*
         @function 获取指定日期最后一期开奖数据

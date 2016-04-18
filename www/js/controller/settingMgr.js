@@ -38,6 +38,8 @@ pk10.settingMgr = function() {
                 function () {
                     window.plugins.toast.showShortCenter("设置成功！");
                     setEditable(false);
+                    pk10.indexMgr.showPage($('#homePage'));
+                    pk10.homeMgr.refreshTable();
                 },
                 function () {
                     window.plugins.toast.showShortCenter("设置失败！");

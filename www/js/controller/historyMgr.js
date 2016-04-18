@@ -9,10 +9,7 @@ pk10.historyMgr = function(){
         settingService.getLastSetting(function (setting) {
             maskUtil.showMask();
             var date = new Date($('#date').val());
-            tableService.initTable(setting, date, $('#tbHistoryResult'), maskUtil.hideMask, function(err){
-                window.plugin.toast.showShortCenter("查询失败！")
-                maskUtil.hideMask();
-            });
+            tableService.initTable(setting, date, $('#tbHistoryResult'), maskUtil.hideMask, maskUtil.hideMask);
         }, function(err){
             window.plugin.toast.showShortCenter("获取设置信息失败！");
         });

@@ -67,6 +67,7 @@ var awardTableService = function(){
                     records.reverse();
                     if (success) success(records);
                 }, function (err) {
+                    debugger;
                     window.plugins.toast.showLongCenter("获取开奖数据失败，请检查网络是否开启。");
                     if (error) error(err);
                 });
