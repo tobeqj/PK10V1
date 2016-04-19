@@ -14,11 +14,23 @@ pk10.homeMgr = function () {
     var initRefreshBtn = function(){
         $('#btnRefresh').click(function () {
             refreshTable();
+            initCurrentAwardInfos();
+        });
+    }
+
+    var initCurrentAwardInfos = function(){
+        awardDataService.getCurrentAwardResult(function(data){
+            var awardNumbers = data.current.awardNumbers;
+            var $balls = $('#currentAwardNumbers').children();
+            $(awardNumbers).each(function(i, num){
+                 $balls[i].className = "no" + num;
+            });
         });
     }
 
     var properties = {        
         initPage: function () {
+            initCurrentAwardInfos();
             initRefreshBtn();
             refreshTable();
         },
