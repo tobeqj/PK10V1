@@ -140,7 +140,6 @@ pk10.indexMgr = function(){
                 $page.trigger("create"); // 重新渲染jquery mobile样式
                 switch(pageId) {
                     case "homePage":
-                        maskUtil.showMask();
                         pk10.homeMgr.initPage();
                         break;
                     case "settingPage":

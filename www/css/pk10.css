@@ -1,0 +1,34 @@
+.lot-nums{ width:100%; height:30px; padding:5px;}
+.lot-nums div{ width:20px; height:20px; background:url(../img/num.png) no-repeat 0 0; padding-right:0; margin-right:10px;
+    float:left; position: relative; background-size: 20px 205px; }
+.lot-nums .no1{ background-position:0 0 !important;}
+.lot-nums .no2{ background-position:0 -21px !important;}
+.lot-nums .no3{ background-position:0 -41px !important;}
+.lot-nums .no4{ background-position:0 -62px !important;}
+.lot-nums .no5{ background-position:0 -82px !important;}
+.lot-nums .no6{ background-position:0 -103px !important;}
+.lot-nums .no7{ background-position:0 -123px !important;}
+.lot-nums .no8{ background-position:0 -144px !important;}
+.lot-nums .no9{ background-position:0 -164px !important;}
+.lot-nums .no10{ background-position:0 -185px !important;}
+/*.lot-nums .no1{ background-position:0 0 !important;}*/
+/*.lot-nums .no2{ background-position:0 -41px !important;}*/
+/*.lot-nums .no3{ background-position:0 -82px !important;}*/
+/*.lot-nums .no4{ background-position:0 -123px !important;}*/
+/*.lot-nums .no5{ background-position:0 -164px !important;}*/
+/*.lot-nums .no6{ background-position:0 -205px !important;}*/
+/*.lot-nums .no7{ background-position:0 -246px !important;}*/
+/*.lot-nums .no8{ background-position:0 -287px !important;}*/
+/*.lot-nums .no9{ background-position:0 -328px !important;}*/
+/*.lot-nums .no10{ background-position:0 -369px !important;}*/
+/*.lot-nums .no1{ background-position:0 0 !important;}*/
+/*.lot-nums .no2{ background-position:0 -31px !important;}*/
+/*.lot-nums .no3{ background-position:0 -61.5px !important;}*/
+/*.lot-nums .no4{ background-position:0 -92px !important;}*/
+/*.lot-nums .no5{ background-position:0 -123px !important;}*/
+/*.lot-nums .no6{ background-position:0 -154px !important;}*/
+/*.lot-nums .no7{ background-position:0 -184.5px !important;}*/
+/*.lot-nums .no8{ background-position:0 -215px !important;}*/
+/*.lot-nums .no9{ background-position:0 -246px !important;}*/
+/*.lot-nums .no10{ background-position:0 -277px !important;}*/
+

@@ -3,7 +3,7 @@ pk10.homeMgr = function () {
 
     var refreshTable = function(){
         settingService.getLastSetting(function (result) {
-            maskUtil.showMask();
+            maskUtil.showMask("加载中...");
             var setting = result;
             homeService.initTable(setting, maskUtil.hideMask, maskUtil.hideMask);
         }, function(err){
