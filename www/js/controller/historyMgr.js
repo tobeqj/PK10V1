@@ -6,14 +6,9 @@ pk10.historyMgr = function(){
     var tableService = awardTableService.newInstance;
 
     var onSearch = function(){
-        settingService.getLastSetting(function (setting) {
-            maskUtil.showMask();
-            var date = new Date($('#date').val());
-            tableService.initTable(setting, date, $('#tbHistoryResult'), maskUtil.hideMask, maskUtil.hideMask);
-        }, function(err){
-            window.plugin.toast.showShortCenter("获取设置信息失败！");
-        });
-
+        maskUtil.showMask();
+        var date = new Date($('#date').val());
+        tableService.initTable(date, $('#tbHistoryResult'), maskUtil.hideMask, maskUtil.hideMask);
     };
 
     var properties = {

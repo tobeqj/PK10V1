@@ -8,6 +8,7 @@ var awardTableService = function(){
         var _cycle;
         var _settings;
         var _date;
+        var _currentAwardResult;
         var _prevAwardNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         var CN_NUMS = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
         var NUM_BALL = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩'];
@@ -53,9 +54,6 @@ var awardTableService = function(){
             var getAwardResultsByDate = function(){
                 awardDataService.getAwardResultsByDate(_date, function (datas) {
                     var records = [];
-                    if (datas.length > 0) {
-                        _currentPeriodNumber = datas[0].periodNumber;
-                    }
                     // 数据是按倒序排列的，为了计算剩余次数，先反转顺序
                     datas.reverse();
                     // 遍历结果集构造表格数据;
@@ -67,7 +65,6 @@ var awardTableService = function(){
                     records.reverse();
                     if (success) success(records);
                 }, function (err) {
-                    debugger;
                     window.plugins.toast.showLongCenter("获取开奖数据失败，请检查网络是否开启。");
                     if (error) error(err);
                 });
@@ -76,6 +73,7 @@ var awardTableService = function(){
             var prevDate = _date.addDays(-1);
             awardDataService.getLastAwardResultByDate(prevDate, function(result){
                 if(result && result.awardNumbers){
+                    _currentAwardResult = result;
                     _prevAwardNums = result.awardNumbers;
                 }
                 getAwardResultsByDate();
@@ -86,11 +84,11 @@ var awardTableService = function(){
         };
 
         // 将开奖数据转化成表格记录数据
-        var convetToTableRecord = function (currentAwardData) {
+        var convetToTableRecord = function (currentAwardResult) {
             var record = {};
-            record.awardResult = currentAwardData;
+            record.awardResult = currentAwardResult;
             record.rows = [];
-            var currentAwardNumbers = currentAwardData.awardNumbers;
+            var currentAwardNumbers = currentAwardResult.awardNumbers;
             $(_settings).each(function (j, setting) {
                 var num = setting.num;
                 var prevPosition = awardDataService.getNumPosition(_prevAwardNums, num);
@@ -146,6 +144,7 @@ var awardTableService = function(){
                 };
                 record.rows.push(row);
             });
+            _currentAwardResult = currentAwardResult;
             _prevAwardNums = currentAwardNumbers;
             return record;
         };
@@ -229,38 +228,39 @@ var awardTableService = function(){
              @param
              @return
              */
-            initTable: function(setting, date, $table, success, error) {
-                _cycle = setting.cycle;
-                _settings = setting.settings;
-                _date = date;
-                $tbody = $table.find('tbody');
-                $tbody.empty();
-                if (!setting || !setting.settings) {
-                    var $tr = $('<tr></tr>');
-                    var $td = $('<td colspan="8"></td>');
-                    $td.text("请先到设置页面填写设置信息！");
-                    $tr.append($td);
-                    $tbody.append($tr);
-                    if (loaded) loaded();
-                    return;
-                }
-                getTableData(function(tbData){
-                    var $trs = createTableRows(tbData);
-                    if ($trs.length) {
-                        $tbody.append($trs);
-                    } else {
+            initTable: function(date, $table, success, error) {
+                settingService.getLastSetting(function (setting) {
+                    _cycle = setting.cycle;
+                    _settings = setting.settings;
+                    _date = date;
+                    $tbody = $table.find('tbody');
+                    $tbody.empty();
+                    if (!setting || !setting.settings) {
                         var $tr = $('<tr></tr>');
                         var $td = $('<td colspan="8"></td>');
-                        $td.text("没有开奖记录！");
+                        $td.text("请先到设置页面填写设置信息！");
                         $tr.append($td);
                         $tbody.append($tr);
+                        if (loaded) loaded();
+                        return;
                     }
-                    var lastAwardResult;
-                    if(tbData.length){
-                        lastAwardResult = tbData[0].awardResult;
-                    }
-                    if(success) success(lastAwardResult);
-                }, error);
+                    getTableData(function(tbData){
+                        var $trs = createTableRows(tbData);
+                        if ($trs.length) {
+                            $tbody.append($trs);
+                        } else {
+                            var $tr = $('<tr></tr>');
+                            var $td = $('<td colspan="8"></td>');
+                            $td.text("没有开奖记录！");
+                            $tr.append($td);
+                            $tbody.append($tr);
+                        }
+                        if(success) success(_currentAwardResult);
+                    }, error);
+                }, function(err){
+                    window.plugin.toast.showShortCenter("获取设置信息失败！");
+                    if(error) error(err);
+                });
             },
             /*
              @function 创建表格行
