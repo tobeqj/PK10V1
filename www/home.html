@@ -1,22 +1,23 @@
 ﻿<div data-role="collapsible" data-collapsed="false">
-    <h1>最新开奖数据:<span id="periodNumber" class="periodNumber"></span></h1>
-    <div id="currentAwardNumbers" class="lot-nums">
-        <div name="position1" class="none"></div>
-        <div name="position2" class="none"></div>
-        <div name="position3" class="none"></div>
-        <div name="position4" class="none"></div>
-        <div name="position5" class="none"></div>
-        <div name="position6" class="none"></div>
-        <div name="position7" class="none"></div>
-        <div name="position8" class="none"></div>
-        <div name="position9" class="none"></div>
-        <div name="position10" class="none"></div>
-    </div>
+    <h1>最新开奖数据：第<span id="periodNumber" class="periodNumber"></span>期</h1>
+    <ul id="currentAwardNumbers" class="lot-nums">
+        <li name="position1" class="none"></li>
+        <li name="position2" class="none"></li>
+        <li name="position3" class="none"></li>
+        <li name="position4" class="none"></li>
+        <li name="position5" class="none"></li>
+        <li name="position6" class="none"></li>
+        <li name="position7" class="none"></li>
+        <li name="position8" class="none"></li>
+        <li name="position9" class="none"></li>
+        <li name="position10" class="none"></li>
+    </ul>
+    <span id="waittingMsg" style="color:green; display: none">等待开奖结果......</span>
     <p>
         <span>离下期开奖时间还剩：</span>
-        <span id="hour"></span>
-        <span id="minute"></span>
-        <span id="second"></span>
+        <span id="hours">00</span>:
+        <span id="minutes">00</span>:
+        <span id="seconds">00</span>
     </p>
 </div>
 

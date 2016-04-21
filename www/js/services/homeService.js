@@ -16,11 +16,21 @@
         $(awardNumbers).each(function(i, num){
                 $balls[i].className = "no" + num;
         });
-        $('#periodNumber').text(_currentPeriodNumber);
+        $('#periodNumber').text(data.current.periodNumber);
     }
 
     var updateNextTimeInfo = function(){
-
+        var timeSpan = Date.getTimeSpan(new Date(), _nextAwardTime);
+        var hours = timeSpan.days ? timeSpan.days * 24 + timeSpan.hours : timeSpan.hours;
+        var strHours = hours.toString();
+        var strMinutes = timeSpan.minutes.toString();
+        var strSeconds = timeSpan.seconds.toString();
+        if(strHours.length == 1) strHours = "0" + strHours;
+        if(strMinutes.length == 1) strMinutes = "0" + strMinutes;
+        if(strSeconds.length == 1) strSeconds = "0" + strSeconds;
+        $('#hours').text(strHours);
+        $('#minutes').text(strMinutes);
+        $('#seconds').text(strSeconds);
     }
 
     var onAwardDataUpdate = function(data){
@@ -34,14 +44,20 @@
             if(!_isTableInited) return;
             var currentTime = new Date();
             if (currentTime.getTime() >= _nextAwardTime.getTime()) {
+                $('#currentAwardNumbers').hide();
+                $('#waittingMsg').show();
                 awardDataService.getCurrentAwardResult(function (data) {
                     if (data.current.periodNumber > _currentPeriodNumber
                         && data.current.awardTime.getTime() >= _nextAwardTime.getTime()) {
                         _currentPeriodNumber = data.current.periodNumber;
                         _nextAwardTime = data.next.awardTime;
+                        $('#currentAwardNumbers').show();
+                        $('#waittingMsg').hide();
                         onAwardDataUpdate(data);
                     }
                 });
+            } else{
+                updateNextTimeInfo();
             }
         }, 1000);
     };
