@@ -1,9 +1,9 @@
 ﻿var homeService = function() {
-    var _nextAwardTime;
-    var _currentPeriodNumber;
-    var _timer;
-    var _tableService = awardTableService.newInstance;
+    var _nextAwardTime = new Date;
+    var _currentPeriodNumber = 0;
     var _isTableInited = false;
+    var _tableService = awardTableService.newInstance;
+    var _timer;
 
     var insertNewAwardResultToTable = function(awardResult) {
         var $tr = _tableService.createTableRow(awardResult);
@@ -11,11 +11,16 @@
     }
 
     var updateCurrentAwardInfo = function(data){
-            var awardNumbers = data.current.awardNumbers;
-            var $balls = $('#currentAwardNumbers').children();
-            $(awardNumbers).each(function(i, num){
+        var awardNumbers = data.current.awardNumbers;
+        var $balls = $('#currentAwardNumbers').children();
+        $(awardNumbers).each(function(i, num){
                 $balls[i].className = "no" + num;
-            });
+        });
+        $('#periodNumber').text(_currentPeriodNumber);
+    }
+
+    var updateNextTimeInfo = function(){
+
     }
 
     var onAwardDataUpdate = function(data){

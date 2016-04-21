@@ -1,5 +1,5 @@
 ﻿<div data-role="collapsible" data-collapsed="false">
-    <h1>最新开奖数据</h1>
+    <h1>最新开奖数据:<span id="periodNumber" class="periodNumber"></span></h1>
     <div id="currentAwardNumbers" class="lot-nums">
         <div name="position1" class="none"></div>
         <div name="position2" class="none"></div>
@@ -12,6 +12,12 @@
         <div name="position9" class="none"></div>
         <div name="position10" class="none"></div>
     </div>
+    <p>
+        <span>离下期开奖时间还剩：</span>
+        <span id="hour"></span>
+        <span id="minute"></span>
+        <span id="second"></span>
+    </p>
 </div>
 
 <table id="tbTodayResult" border="1" cellspacing="0" width="100%" rules="all" cellpadding="5">
