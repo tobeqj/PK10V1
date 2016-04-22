@@ -1,4 +1,5 @@
-﻿<div data-role="collapsible" data-collapsed="false">
+﻿<!-- 最新开奖信息折叠面板 -->
+<div data-role="collapsible" data-collapsed="false">
     <h1>最新开奖数据：第<span id="periodNumber" class="periodNumber"></span>期</h1>
     <ul id="currentAwardNumbers" class="lot-nums">
         <li name="position1" class="none"></li>
@@ -15,12 +16,14 @@
     <span id="waittingMsg" style="color:green; display: none">等待开奖结果......</span>
     <p>
         <span>离下期开奖时间还剩：</span>
+        <span id="days" style="display: none"></span>
         <span id="hours">00</span>:
         <span id="minutes">00</span>:
         <span id="seconds">00</span>
     </p>
 </div>
 
+<!-- 开奖结果表格 -->
 <table id="tbTodayResult" border="1" cellspacing="0" width="100%" rules="all" cellpadding="5">
     <thead>
         <tr>
@@ -40,8 +43,9 @@
     <tbody>
     </tbody>
 </table>
+
+<!-- 点击表格详情列的按钮时弹出的窗体 -->
 <div data-role="popup" id="detailsPopup" class="ui-content">
-    <p>这是一个简单的弹窗。</p>
 </div>
 
 

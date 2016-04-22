@@ -31,20 +31,17 @@
     <script src="js/controller/settingMgr.js"></script>
     <script src="js/controller/homeMgr.js"></script>
     <script src="js/controller/historyMgr.js"></script>
-    <style type="text/css">     
-        .mask {       
-            position: absolute; top: 0px; filter: alpha(opacity=60); background-color: #777;     
-            z-index: 1002; left: 0px;     
-            opacity:0.5; -moz-opacity:0.5;     
-        }
-    </style>
 </head>
 
 <body>
     <!-- 功能面板 -->
     <div data-role="panel" id="toolPanel"> 
-        <h2>面板头部..</h2>
-        <p>面板内容..</p>
+        <h2>更多...</h2>
+        <ul data-role="listview">
+            <li><a href="#">反馈</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">退出</a></li>
+        </ul>
     </div> 
     <!-- 页面标题 -->
     <div id="titleHistory" data-role="header" data-position="fixed" data-tap-toggle="false" style="display: none">

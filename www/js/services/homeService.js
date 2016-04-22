@@ -8,16 +8,16 @@
     var insertNewAwardResultToTable = function(awardResult) {
         var $tr = _tableService.createTableRow(awardResult);
         $('#tbTodayResult tbody').prepend($tr);
-    }
+    };
 
     var updateCurrentAwardInfo = function(data){
         var awardNumbers = data.current.awardNumbers;
         var $balls = $('#currentAwardNumbers').children();
         $(awardNumbers).each(function(i, num){
-                $balls[i].className = "no" + num;
+            $balls[i].className = "no" + num;
         });
         $('#periodNumber').text(data.current.periodNumber);
-    }
+    };
 
     var updateNextTimeInfo = function(){
         var timeSpan = Date.getTimeSpan(new Date(), _nextAwardTime);
@@ -28,35 +28,50 @@
         if(strHours.length == 1) strHours = "0" + strHours;
         if(strMinutes.length == 1) strMinutes = "0" + strMinutes;
         if(strSeconds.length == 1) strSeconds = "0" + strSeconds;
+        if(timeSpan.days){
+            $('#days').text(timeSpan.days + "天");
+            $('#days').show();
+        } else{
+            $('#days').hide();
+        }
         $('#hours').text(strHours);
         $('#minutes').text(strMinutes);
         $('#seconds').text(strSeconds);
-    }
+    };
+
+    var showWaittingAwardResultMsg = function(){
+        $('#currentAwardNumbers').hide();
+        $('#periodNumber').text(_currentPeriodNumber + 1);
+        $('#waittingMsg').show();
+    };
+
+    var hideWaittingAwardResultMsg = function(){
+        $('#currentAwardNumbers').show();
+        $('#waittingMsg').hide();
+    };
 
     var onAwardDataUpdate = function(data){
         insertNewAwardResultToTable(data.current);
         updateCurrentAwardInfo(data);
-    }
+    };
 
     var startTimedTask = function () {
         clearTimedTask();
         _timer = setInterval(function () {
             if(!_isTableInited) return;
             var currentTime = new Date();
-            if (currentTime.getTime() >= _nextAwardTime.getTime()) {
-                $('#currentAwardNumbers').hide();
-                $('#waittingMsg').show();
+            if (currentTime.getTime() > _nextAwardTime.getTime()) {
+                showWaittingAwardResultMsg();
                 awardDataService.getCurrentAwardResult(function (data) {
                     if (data.current.periodNumber > _currentPeriodNumber
                         && data.current.awardTime.getTime() >= _nextAwardTime.getTime()) {
                         _currentPeriodNumber = data.current.periodNumber;
                         _nextAwardTime = data.next.awardTime;
-                        $('#currentAwardNumbers').show();
-                        $('#waittingMsg').hide();
                         onAwardDataUpdate(data);
                     }
                 });
             } else{
+                hideWaittingAwardResultMsg();
                 updateNextTimeInfo();
             }
         }, 1000);
@@ -64,7 +79,7 @@
 
     var clearTimedTask = function(){
         if (_timer) clearInterval(_timer);
-    }
+    };
     
     var properties = {
         initTable: function(success, error){
@@ -74,7 +89,8 @@
                 //获取最新一期的开奖数据
                 awardDataService.getCurrentAwardResult(function (data) {
                     _nextAwardTime = data.next.awardTime;
-                    if (data.current.periodNumber > _currentPeriodNumber) {
+                    if (data.current.periodNumber > _currentPeriodNumber
+                        && data.current.awardNumbers.getTime() >= _nextAwardTime.getTime()) {
                         _currentPeriodNumber = data.current.periodNumber;
                         var today = new Date().format("yyyy-MM-dd");
                         if (data.current.awardTime.format("yyyy-MM-dd") === today) {
@@ -82,7 +98,7 @@
                         }
                     }
                     _isTableInited = true;
-                    if (success) success();;
+                    if (success) success();
                 }, function (err) {
                     window.plugins.toast.showLongCenter("获取本期开奖数据失败！");
                     if(error) error(err);
