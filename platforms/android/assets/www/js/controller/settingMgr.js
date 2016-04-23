@@ -1,15 +1,15 @@
 ﻿var pk10 = pk10 || {};
 pk10.settingMgr = function() {
-    var formData = {}; //表单数据
+    var _formData = $('#formSetting').serializeObject(); //表单数据
 
     var initRadio = function() {
         // 绑定各单选按钮的点击事件
         $('input:radio').click(function () {
             // 重复点击同一个选项去除勾选
-            if (formData[this.name] == this.value) {
+            if (_formData[this.name] == this.value) {
                 this.checked = false;
             }
-            formData = $('#formSetting').serializeObject();
+            _formData = $('#formSetting').serializeObject();
             $('#cycle').blur();
         });
     };
@@ -24,7 +24,8 @@ pk10.settingMgr = function() {
             }
 
             var hasProp = false;
-            for (var prop in formData) {
+            _formData = $('#formSetting').serializeObject()
+            for (var prop in _formData) {
                 hasProp = true;
                 break;
             }
@@ -38,6 +39,8 @@ pk10.settingMgr = function() {
                 function () {
                     window.plugins.toast.showShortCenter("设置成功！");
                     setEditable(false);
+                    pk10.indexMgr.showPage($('#homePage'));
+                    pk10.homeMgr.refreshTable();
                 },
                 function () {
                     window.plugins.toast.showShortCenter("设置失败！");
@@ -52,7 +55,7 @@ pk10.settingMgr = function() {
 
     var initResetBtn = function() {
         $('#btnReset').click(function() {
-            clearSetting();
+            //clearSetting();
             setEditable(true);
         });
     };
@@ -60,8 +63,8 @@ pk10.settingMgr = function() {
     var getSettings = function() {
         var settings = [];
         for (var i = 1; i <= 10; i++) {
-            if (formData["danshuang" + i] || formData["daxiao" + i]) {
-                var setting = new Setting(i, formData["danshuang" + i], formData["daxiao" + i]);
+            if (_formData["danshuang" + i] || _formData["daxiao" + i]) {
+                var setting = new Setting(i, _formData["danshuang" + i], _formData["daxiao" + i]);
                 settings.push(setting);
             }
         }

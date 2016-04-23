@@ -6,48 +6,53 @@
     <title>index</title>
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/pk10.css">
     <script src="js/lib/jquery-1.12.1.min.js"></script>
     <script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/lib/swiper.min.js"></script>
     <script src="js/lib/json2.js"></script>
+    <script src="js/lib/cryptico.js"></script>
     <script src="js/cordova/cordova.js"></script>
     <script src="js/model/Log.js"></script>
     <script src="js/model/Setting.js"></script>
     <script src="js/model/AwardResult.js"></script>
+    <script src="js/model/TimeSpan.js"></script>
     <script src="js/common/common.js"></script>
     <script src="js/common/Dictionary.js"></script>
     <script src="js/common/fileHelper.js"></script>
     <script src="js/common/logger.js"></script>
+    <script src="js/common/maskUtil.js"></script>
+    <script src="js/common/licenseHelper.js"></script>
     <script src="js/dal/dbHelper.js"></script>
     <script src="js/dal/settingDal.js"></script>
-    <script src="js/bll/settingService.js"></script>
-    <script src="js/bll/awardDataService.js"></script>
+    <script src="js/services/settingService.js"></script>
+    <script src="js/services/awardDataService.js"></script>
+    <script src="js/services/awardTableService.js"></script>
+    <script src="js/services/homeService.js"></script>
+    <script src="js/controller/indexMgr.js"></script>
     <script src="js/controller/settingMgr.js"></script>
     <script src="js/controller/homeMgr.js"></script>
-
-    <style type="text/css">     
-        .mask {       
-            position: absolute; top: 0px; filter: alpha(opacity=60); background-color: #777;     
-            z-index: 1002; left: 0px;     
-            opacity:0.5; -moz-opacity:0.5;     
-        }     
-    </style>
+    <script src="js/controller/historyMgr.js"></script>
 </head>
 
 <body>
+    <!-- 功能面板 -->
     <div data-role="panel" id="toolPanel"> 
-        <h2>面板头部..</h2>
-        <p>面板内容..</p>
+        <h2>更多...</h2>
+        <ul data-role="listview" style="padding-right: 5px">
+            <li><a href="#">反馈</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">退出</a></li>
+        </ul>
     </div> 
-    
+    <!-- 页面标题 -->
     <div id="titleHistory" data-role="header" data-position="fixed" data-tap-toggle="false" style="display: none">
         <h1><span id="Span3">历史</span></h1>
     </div>
     <div id="titleHome" data-role="header" data-position="fixed" data-tap-toggle="false">
-        <a id="btnTool" href="#toolPanel" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>                
-        <h1><span id="Span4">主页</span></h1>
-        <a id="btnRefresh" class="ui-btn-right ui-btn ui-icon-recycle ui-btn-icon-notext ui-corner-all ui-shadow"></a>                
-
+        <!--<a id="btnTool" href="#toolPanel" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>                -->
+        <h1><span id="Span4">今日开奖结果</span></h1>
+        <a id="btnRefresh" class="ui-btn-right ui-btn ui-icon-recycle ui-btn-icon-notext ui-corner-all ui-shadow"></a>
     </div>
     <div id="titleSetting" data-role="header" data-position="fixed" data-tap-toggle="false" style="display: none">
         <a id="btnClear" href="#" class="ui-btn-left ui-btn ui-icon-delete ui-btn-icon-left" style="display: none">清空</a>        
@@ -55,7 +60,7 @@
         <a id="btnComplete" href="#" class="ui-btn-right ui-btn ui-icon-check ui-btn-icon-left">完成</a>
         <a id="btnReset" href="#" class="ui-btn-right ui-btn ui-icon-gear ui-btn-icon-left" style="display: none">重置</a>
     </div>
-
+    <!-- 页面内容 -->
     <div data-role="main" class="ui-content" style="padding: 0px">
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -66,7 +71,7 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
-
+    <!-- 底部菜单栏 -->
     <div data-role="footer" data-position="fixed">
         <div id="navbar" data-role="navbar" data-iconpos="top">
             <ul>
@@ -76,195 +81,11 @@
             </ul>
         </div>
     </div>
-    
+    <!-- 遮罩层 -->
     <div id="mask" class="mask"></div>
 
     <script type="text/javascript">
-        var _currentPage;
-        var _mySwiper;
-        var _setting;
-        document.addEventListener("deviceready", onDeviceReady);
-        document.addEventListener("backbutton", onBackBtnDown);
-
-        $('#btnRefresh').click(function () {
-            settingService.getLastSetting(function (result) {
-                showMask();
-                _setting = result;
-                pk10.homeMgr.initPage(_setting, hideMask, hideMask);
-            });
-        });
-
-        // 注：此处不能用var onDeviceReady = function的形式初始化
-        // 不然要把document.addEventListener的语句放在后面
-        function onDeviceReady () {
-            initSwiper();
-            initNavbar();
-            initContentSize();
-            showDefaultPage();
-        };
-        
-        function onBackBtnDown() {
-            window.plugins.toast.showShortBottom("再点击一次退出！");
-            document.removeEventListener('backbutton', onBackBtnDown, false);
-            document.addEventListener('backbutton', navigator.app.exitApp, false);
-            // 3秒后重新注册
-            var intervalID = window.setTimeout(function() {
-                window.clearTimeout(intervalID);
-                document.removeEventListener('backbutton', navigator.app.exitApp, false);
-                document.addEventListener('backbutton', onBackBtnDown, false);
-            }, 3000);
-        }
-        
-        var initContentSize = function () {
-            var widowHeight = $(window).height();
-            var headerHeight = $('div[data-role="header"]').height();
-            var footerHeight = $('div[data-role="footer"]').height();
-            var contentHeight = widowHeight - headerHeight - footerHeight;
-            $('.swiper-slide').height(contentHeight);
-        };
-
-        var initSwiper = function() {
-            // 注册左右滑动控件
-            _mySwiper = new Swiper('.swiper-container', {
-                // initialSlide: 1, //默认打开显示第二页 
-                pagination: '.swiper-pagination', //显示页码
-                onSlidePrevStart: function (swiper) {
-                    var prevPage = getPrevPage();
-                    if (prevPage) {
-                        showPage(prevPage);
-                        _currentPage = prevPage;
-                    }
-                },
-                onSlideNextStart: function (swiper) {
-                    var nextPage = getNextPage();
-                    if (nextPage) {
-                        showPage(nextPage);
-                        _currentPage = nextPage;
-                    }
-                }
-            });
-        };
-
-        var initNavbar = function() {
-            // 注册菜单点击事件
-            $('#navbar').find('li a').click(function () {
-                switch (this.id) {
-                    case 'btnHistory':
-                        _currentPage = $('#historyPage');
-                        break;
-                    case 'btnSetting':
-                        _currentPage = $('#settingPage');
-                        break;
-                    case 'btnHome':
-                    default:
-                        _currentPage = $('#homePage');
-                        break;
-                }
-                showPage(_currentPage);
-            });
-        };
-
-        var getPrevPage = function() {
-            switch (_currentPage.attr('id')) {
-            case 'homePage':
-                return $('#historyPage');
-            case 'settingPage':
-                return $('#homePage');
-            default:
-                return null;
-            }
-        };
-
-        var getNextPage = function() {
-            switch (_currentPage.attr('id')) {
-            case 'homePage':
-                return $('#settingPage');
-            case 'historyPage':
-                return $('#homePage');
-            default:
-                return null;
-            }
-        };
-
-        var showPage = function (page) {
-            var src = '';
-            var pageId = page.attr('id');
-            switch (pageId) {
-            case "homePage":
-                src = 'home.html';
-                $('#titleHome').show();
-                $('#titleHistory').hide();
-                $('#titleSetting').hide();
-                $('#btnHome').addClass('ui-btn-active');
-                $('#btnHistory').removeClass('ui-btn-active');
-                $('#btnSetting').removeClass('ui-btn-active');
-                break;
-            case "settingPage":
-                src = 'setting.html';
-                $('#titleHome').hide();
-                $('#titleHistory').hide();
-                $('#titleSetting').show();
-                $('#btnSetting').addClass('ui-btn-active');
-                $('#btnHistory').removeClass('ui-btn-active');
-                $('#btnHome').removeClass('ui-btn-active');
-                break;
-            case "historyPage":
-                src = 'history.html';
-                $('#titleHome').hide();
-                $('#titleHistory').show();
-                $('#titleSetting').hide();
-                $('#btnHistory').addClass('ui-btn-active');
-                $('#btnHome').removeClass('ui-btn-active');
-                $('#btnSetting').removeClass('ui-btn-active');
-                break;
-            }
-
-            if (page.html().length == 0) {
-                page.load(src, null, function () {
-                    page.trigger("create"); // 重新渲染jquery mobile样式
-                    switch(pageId) {
-                        case "homePage":
-                            showMask();
-                            pk10.homeMgr.initPage(_setting, hideMask, hideMask);
-                            break;
-                        case "settingPage":
-                            pk10.settingMgr.initPage(_setting);
-                            break;
-                    }
-                });
-            }
-
-            var pageIndex = page.parent('.swiper-slide').index();
-            _mySwiper.slideTo(pageIndex, 100, false);
-        };
-
-        var showDefaultPage = function() {
-            // 如果还没有设置信息，开启程序时默认打开设置页面，否则，默认打开首页
-            settingService.getLastSetting(function(result) {
-                if (result) {
-                    _setting = result;
-                    _currentPage = $('#homePage');
-                } else {
-                    _currentPage = $('#settingPage');
-                }
-                showPage(_currentPage);
-            }, function() {
-                _currentPage = $('#homePage');
-                showPage(_currentPage);
-            });
-        };
-        
-        //显示遮罩层    
-        function showMask() {
-            $("#mask").css("height", $(document).height());
-            $("#mask").css("width", $(document).width());
-            $("#mask").show();
-        }
-        
-        //隐藏遮罩层  
-        function hideMask() {
-            $("#mask").hide();
-        }
+        pk10.indexMgr.initPage();
     </script>
 </body>
 
