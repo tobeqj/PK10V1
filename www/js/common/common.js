@@ -86,6 +86,19 @@ Date.getTimeSpan = function(date1, date2){
     var leave3=leave2%(60*1000); //计算分钟数后剩余的毫秒数
     var seconds=Math.round(leave3/1000);
 
+    if(seconds == 60) {
+        minutes++;
+        seconds = 0;
+    }
+    if(minutes == 60){
+        hours++;
+        minutes = 0;
+    }
+    if(hours == 24){
+        days++;
+        hours = 0;
+    }
+
     return new TimeSpan(days, hours, minutes, seconds);
 }
 

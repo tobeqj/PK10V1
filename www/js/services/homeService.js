@@ -1,6 +1,6 @@
 ﻿var homeService = function() {
-    var _nextAwardTime = new Date;
     var _currentPeriodNumber = 0;
+    var _nextAwardTime = new Date;
     var _isTableInited = false;
     var _tableService = awardTableService.newInstance;
     var _timer;
@@ -43,6 +43,9 @@
         $('#currentAwardNumbers').hide();
         $('#periodNumber').text(_currentPeriodNumber + 1);
         $('#waittingMsg').show();
+        $('#hours').text("00");
+        $('#minutes').text("00");
+        $('#seconds').text("00");
     };
 
     var hideWaittingAwardResultMsg = function(){
@@ -63,8 +66,7 @@
             if (currentTime.getTime() > _nextAwardTime.getTime()) {
                 showWaittingAwardResultMsg();
                 awardDataService.getCurrentAwardResult(function (data) {
-                    if (data.current.periodNumber > _currentPeriodNumber
-                        && data.current.awardTime.getTime() >= _nextAwardTime.getTime()) {
+                    if (data.current.periodNumber > _currentPeriodNumber) {
                         _currentPeriodNumber = data.current.periodNumber;
                         _nextAwardTime = data.next.awardTime;
                         onAwardDataUpdate(data);
@@ -89,14 +91,6 @@
                 //获取最新一期的开奖数据
                 awardDataService.getCurrentAwardResult(function (data) {
                     _nextAwardTime = data.next.awardTime;
-                    if (data.current.periodNumber > _currentPeriodNumber
-                        && data.current.awardNumbers.getTime() >= _nextAwardTime.getTime()) {
-                        _currentPeriodNumber = data.current.periodNumber;
-                        var today = new Date().format("yyyy-MM-dd");
-                        if (data.current.awardTime.format("yyyy-MM-dd") === today) {
-                            insertNewAwardResultToTable(data.current);
-                        }
-                    }
                     _isTableInited = true;
                     if (success) success();
                 }, function (err) {
