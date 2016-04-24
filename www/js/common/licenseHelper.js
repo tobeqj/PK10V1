@@ -9,7 +9,7 @@ var licenseHelper = function(){
          // 生成RSA密钥
          var RSAkey = cryptico.generateRSAKey(passPhrase, Bits);
          return RSAkey;
-     }
+     };
 
     var getEncryptTtext = function(passPhrase, plainText){
         // 生成RSA密钥
@@ -31,10 +31,9 @@ var licenseHelper = function(){
         var decryptText = DecryptionResult.plaintext;//明文
 
         return decryptText;
-    }
+    };
 
     var properties = {
-        createLicense: getEncryptTtext,
         checkLicense: function(passPhrase, license){
             var decryptText = getDecryptText(passPhrase, license);
             return decryptText == passPhrase;

@@ -24,7 +24,7 @@ pk10.settingMgr = function() {
             }
 
             var hasProp = false;
-            _formData = $('#formSetting').serializeObject()
+            _formData = $('#formSetting').serializeObject();
             for (var prop in _formData) {
                 hasProp = true;
                 break;
