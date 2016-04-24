@@ -30,5 +30,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-clipboardManager":{
+        "source": {
+            "type": "registry",
+            "id": "com.saatcioglu.phonegap.ClipboardManagerPlugin"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

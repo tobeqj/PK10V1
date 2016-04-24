@@ -36,6 +36,16 @@
                         }
                     ]
                 }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"ClipboardManagerPlugin\"><param name=\"android-package\" value=\"com.saatcioglu.phonegap.ClipboardManagerPlugin.ClipboardManagerPlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
@@ -51,6 +61,9 @@
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.felix.pk10"
+        },
+        "com.saatcioglu.phonegap.ClipboardManagerPlugin": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {},
@@ -228,12 +241,20 @@
             "clobbers": [
                 "device"
             ]
+        },
+        {
+            "file": "plugins/com.saatcioglu.phonegap.ClipboardManagerPlugin/www/clipboard.js",
+            "id": "com.saatcioglu.phonegap.ClipboardManagerPlugin.ClipboardManagerPlugin",
+            "clobbers": [
+                "clipboard"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.2.1",
         "cordova-plugin-x-toast": "2.4.2",
         "cordova-plugin-file": "4.1.1",
-        "cordova-plugin-device": "1.1.2"
+        "cordova-plugin-device": "1.1.2",
+        "com.saatcioglu.phonegap.ClipboardManagerPlugin": "1.0"
     }
 }

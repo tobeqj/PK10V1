@@ -229,10 +229,8 @@ var awardTableService = function(){
              @return
              */
             initTable: function(date, $table, success, error) {
+                _date = date;
                 settingService.getLastSetting(function (setting) {
-                    _cycle = setting.cycle;
-                    _settings = setting.settings;
-                    _date = date;
                     $tbody = $table.find('tbody');
                     $tbody.empty();
                     if (!setting || !setting.settings) {
@@ -241,9 +239,11 @@ var awardTableService = function(){
                         $td.text("请先到设置页面填写设置信息！");
                         $tr.append($td);
                         $tbody.append($tr);
-                        if (loaded) loaded();
+                        if(error) error();
                         return;
                     }
+                    _cycle = setting.cycle;
+                    _settings = setting.settings;
                     getTableData(function(tbData){
                         var $trs = createTableRows(tbData);
                         if ($trs.length) {

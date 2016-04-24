@@ -6,11 +6,50 @@ pk10.indexMgr = function(){
     var _currentPage;
     var _mySwiper;
 
-    var onDeviceReady = function() {
+    var initPage = function(){
         initSwiper();
         initNavbar();
         initContentSize();
         showDefaultPage();
+    }
+
+    var onDeviceReady = function() {
+        var uuid = device.uuid;
+        var license = localStorage.license;
+        if(license && licenseHelper.checkLicense(uuid, license)){
+            initPage();
+        } else{
+            $('#uuid').text(uuid);
+            $('#btnCopyUuid').click(function(){
+                clipboard.copy(
+                    uuid,
+                    function(r){
+                        window.plugins.toast.showShortCenter("复制成功！");
+                    },
+                    function(e){
+                        window.plugins.toast.showShortCenter("复制失败！");
+                    }
+                );
+            });
+            $('#btnLicenseOk').click(function(){
+                var license = $('#license').val();
+                localStorage.license = license;
+                if(!license){
+                    window.plugins.showShortCenter("请输入授权码！");
+                    return;
+                }
+                if(licenseHelper.checkLicense(uuid, license)){
+                    initPage();
+                    $('#licensePopup').popup('close')
+                } else {
+                    window.plugins.showShortCenter("授权码不正确！");
+                }
+            });
+            $('#btnQuit').click(function(){
+                navigator.app.exitApp();
+            });
+            $('#licensePopup').popup('open');
+        }
     };
 
     var onBackBtnDown = function() {

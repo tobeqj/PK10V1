@@ -164,10 +164,22 @@ module.exports = [
         "clobbers": [
             "device"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-clipboardManager/www/clipboard.js",
+        "id": "com.saatcioglu.phonegap.ClipboardManagerPlugin.ClipboardManagerPlugin",
+        "clobbers": [
+            "clipboard"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
-{}
+{
+    "cordova-plugin-x-toast": "2.4.2",
+    "cordova-plugin-file": "4.1.1",
+    "cordova-plugin-device": "1.1.2",
+    "com.saatcioglu.phonegap.ClipboardManagerPlugin": "1.0"
+}
 // BOTTOM OF METADATA
 });

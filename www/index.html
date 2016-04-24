@@ -4,6 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; chartset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>index</title>
+    <!--<link rel="stylesheet" href="css/themes/skyd.min.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />-->
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="css/swiper.min.css"/>
     <link rel="stylesheet" href="css/pk10.css">
@@ -36,53 +38,73 @@
 </head>
 
 <body>
-    <!-- 功能面板 -->
-    <div data-role="panel" id="toolPanel"> 
-        <h2>更多...</h2>
-        <ul data-role="listview" style="padding-right: 5px">
-            <li><a href="#">反馈</a></li>
-            <li><a href="#">关于</a></li>
-            <li><a href="#">退出</a></li>
-        </ul>
-    </div> 
-    <!-- 页面标题 -->
-    <div id="titleHistory" data-role="header" data-position="fixed" data-tap-toggle="false" style="display: none">
-        <h1><span id="Span3">历史</span></h1>
-    </div>
-    <div id="titleHome" data-role="header" data-position="fixed" data-tap-toggle="false">
-        <!--<a id="btnTool" href="#toolPanel" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>                -->
-        <h1><span>今日开奖结果</span></h1>
-        <a id="btnRefresh" class="ui-btn-right ui-btn ui-icon-recycle ui-btn-icon-notext ui-corner-all ui-shadow"></a>
-    </div>
-    <div id="titleSetting" data-role="header" data-position="fixed" data-tap-toggle="false" style="display: none">
-        <a id="btnClear" href="#" class="ui-btn-left ui-btn ui-icon-delete ui-btn-icon-left" style="display: none">清空</a>        
-        <h1><span>设置</span></h1>
-        <a id="btnComplete" href="#" class="ui-btn-right ui-btn ui-icon-check ui-btn-icon-left">完成</a>
-        <a id="btnReset" href="#" class="ui-btn-right ui-btn ui-icon-gear ui-btn-icon-left" style="display: none">重置</a>
-    </div>
-    <!-- 页面内容 -->
-    <div data-role="main" class="ui-content" style="padding: 0px">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide" style="overflow-y:auto"><div id="historyPage" style="padding: 10px;"></div></div>
-                <div class="swiper-slide" style="overflow-y:auto"><div id="homePage" style="padding: 10px;"></div></div>
-                <div class="swiper-slide" style="overflow-y:auto"><div id="settingPage" style="padding: 10px;"></div></div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-    <!-- 底部菜单栏 -->
-    <div data-role="footer" data-position="fixed">
-        <div id="navbar" data-role="navbar" data-iconpos="top">
-            <ul>
-                <li><a id="btnHistory" href="#" data-icon="search">历史</a></li>
-                <li><a id="btnHome" href="#" data-icon="home" class="ui-btn-active">首页</a></li>
-                <li><a id="btnSetting" href="#" data-icon="gear">设置</a></li>
+    <div data-role="page" data-theme="a">
+        <!-- 功能面板 -->
+        <div data-role="panel" id="toolPanel">
+            <h2>更多...</h2>
+            <ul data-role="listview" style="padding-right: 5px">
+                <li><a href="#">反馈</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">退出</a></li>
             </ul>
         </div>
+        <!-- 页面标题 -->
+        <div id="titleHistory" data-role="header" data-position="fixed" data-tap-toggle="false" style="display: none">
+            <h1><span id="Span3">历史</span></h1>
+        </div>
+        <div id="titleHome" data-role="header" data-position="fixed" data-tap-toggle="false">
+            <!--<a id="btnTool" href="#toolPanel" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>                -->
+            <h1><span>今日开奖结果</span></h1>
+            <a id="btnRefresh" class="ui-btn-right ui-btn ui-icon-recycle ui-btn-icon-notext ui-corner-all ui-shadow"></a>
+        </div>
+        <div id="titleSetting" data-role="header" data-position="fixed" data-tap-toggle="false" style="display: none">
+            <a id="btnClear" href="#" class="ui-btn-left ui-btn ui-icon-delete ui-btn-icon-left" style="display: none">清空</a>
+            <h1><span>设置</span></h1>
+            <a id="btnComplete" href="#" class="ui-btn-right ui-btn ui-icon-check ui-btn-icon-left">完成</a>
+            <a id="btnReset" href="#" class="ui-btn-right ui-btn ui-icon-gear ui-btn-icon-left" style="display: none">重置</a>
+        </div>
+        <!-- 页面内容 -->
+        <div data-role="main" class="ui-content" style="padding: 0px">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="overflow-y:auto"><div id="historyPage" style="padding: 10px;"></div></div>
+                    <div class="swiper-slide" style="overflow-y:auto"><div id="homePage" style="padding: 10px;"></div></div>
+                    <div class="swiper-slide" style="overflow-y:auto"><div id="settingPage" style="padding: 10px;"></div></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- 底部菜单栏 -->
+        <div data-role="footer" data-position="fixed">
+            <div id="navbar" data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a id="btnHistory" href="#" data-icon="search">历史</a></li>
+                    <li><a id="btnHome" href="#" data-icon="home" class="ui-btn-active">首页</a></li>
+                    <li><a id="btnSetting" href="#" data-icon="gear">设置</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 遮罩层 -->
+        <div id="mask" class="mask"></div>
+        <!-- 验证弹窗 -->
+        <div data-role="popup" id="licensePopup">
+            <div data-role="header">
+                <h1>授权</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p style="word-break:break-all;">您的手机识别码为：<span id="uuid"></span>，请向软件提供者提供该识别码来获取授权码。</p>
+                <button id="btnCopyUuid">复制识别码</button>
+                <label for="license">授权码：</label>
+                <textarea id="license" style=" resize: none"></textarea>
+            </div>
+            <div data-role="footer">
+                <div style="text-align: center">
+                    <button id="btnLicenseOk" style="display: inline-block; width:100px;">认证</button>
+                    <button id="btnQuit" style="display: inline-block; width: 100px; margin-left: 20px;">退出</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- 遮罩层 -->
-    <div id="mask" class="mask"></div>
 
     <script type="text/javascript">
         pk10.indexMgr.initPage();

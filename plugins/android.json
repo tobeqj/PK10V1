@@ -18,6 +18,9 @@
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.felix.pk10"
+        },
+        "cordova-plugin-clipboardManager":{
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {}
