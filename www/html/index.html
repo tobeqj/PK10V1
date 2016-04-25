@@ -4,37 +4,37 @@
     <meta http-equiv="Content-Type" content="text/html; chartset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>index</title>
-    <!--<link rel="stylesheet" href="css/themes/skyd.min.css" />
-    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />-->
-    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
-    <link rel="stylesheet" href="css/swiper.min.css"/>
-    <link rel="stylesheet" href="css/pk10.css">
-    <script src="js/lib/jquery-1.12.1.min.js"></script>
-    <script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
-    <script src="js/lib/swiper.min.js"></script>
-    <script src="js/lib/json2.js"></script>
-    <script src="js/lib/cryptico.js"></script>
-    <script src="js/cordova/cordova.js"></script>
-    <script src="js/model/Log.js"></script>
-    <script src="js/model/Setting.js"></script>
-    <script src="js/model/AwardResult.js"></script>
-    <script src="js/model/TimeSpan.js"></script>
-    <script src="js/common/common.js"></script>
-    <script src="js/common/Dictionary.js"></script>
-    <script src="js/common/fileHelper.js"></script>
-    <script src="js/common/logger.js"></script>
-    <script src="js/common/maskUtil.js"></script>
-    <script src="js/common/licenseHelper.min.js"></script>
-    <script src="js/dal/dbHelper.js"></script>
-    <script src="js/dal/settingDal.js"></script>
-    <script src="js/services/settingService.min.js"></script>
-    <script src="js/services/awardDataService.min.js"></script>
-    <script src="js/services/awardTableService.min.js"></script>
-    <script src="js/services/homeService.min.js"></script>
-    <script src="js/controller/indexMgr.min.js"></script>
-    <script src="js/controller/homeMgr.min.js"></script>
-    <script src="js/controller/historyMgr.min.js"></script>
-    <script src="js/controller/settingMgr.min.js"></script>
+    <!--<link rel="stylesheet" href="../css/themes/skyd.min.css" />
+    <link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />-->
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css"/>
+    <link rel="stylesheet" href="../css/pk10.css">
+    <script src="../js/lib/jquery-1.12.1.min.js"></script>
+    <script src="../js/lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../js/lib/swiper.min.js"></script>
+    <script src="../js/lib/json2.js"></script>
+    <script src="../js/lib/cryptico.js"></script>
+    <script src="../js/cordova/cordova.js"></script>
+    <script src="../js/model/Log.js"></script>
+    <script src="../js/model/Setting.js"></script>
+    <script src="../js/model/AwardResult.js"></script>
+    <script src="../js/model/TimeSpan.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/common/Dictionary.js"></script>
+    <script src="../js/common/fileHelper.js"></script>
+    <script src="../js/common/logger.js"></script>
+    <script src="../js/common/maskUtil.js"></script>
+    <script src="../js/common/licenseHelper.min.js"></script>
+    <script src="../js/dal/dbHelper.js"></script>
+    <script src="../js/dal/settingDal.js"></script>
+    <script src="../js/services/settingService.min.js"></script>
+    <script src="../js/services/awardDataService.min.js"></script>
+    <script src="../js/services/awardTableService.min.js"></script>
+    <script src="../js/services/homeService.min.js"></script>
+    <script src="../js/controller/indexMgr.js"></script>
+    <script src="../js/controller/homeMgr.min.js"></script>
+    <script src="../js/controller/historyMgr.min.js"></script>
+    <script src="../js/controller/settingMgr.min.js"></script>
 </head>
 
 <body>
@@ -53,7 +53,8 @@
             <h1><span id="Span3">历史</span></h1>
         </div>
         <div id="titleHome" data-role="header" data-position="fixed" data-tap-toggle="false">
-            <!--<a id="btnTool" href="#toolPanel" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>                -->
+            <!--<a id="btnTool" href="#toolPanel" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>-->
+            <a id="btnTest" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>
             <h1><span>今日开奖结果</span></h1>
             <a id="btnRefresh" class="ui-btn-right ui-btn ui-icon-recycle ui-btn-icon-notext ui-corner-all ui-shadow"></a>
         </div>
@@ -86,24 +87,6 @@
         </div>
         <!-- 遮罩层 -->
         <div id="mask" class="mask"></div>
-        <!-- 验证弹窗 -->
-        <div data-role="popup" id="licensePopup">
-            <div data-role="header">
-                <h1>授权</h1>
-            </div>
-            <div data-role="main" class="ui-content">
-                <p style="word-break:break-all;">您的手机识别码为：<span id="uuid"></span>，请向软件提供者提供该识别码来获取授权码。</p>
-                <button id="btnCopyUuid">复制识别码</button>
-                <label for="license">授权码：</label>
-                <textarea id="license" style=" resize: none"></textarea>
-            </div>
-            <div data-role="footer">
-                <div style="text-align: center">
-                    <button id="btnLicenseOk" style="display: inline-block; width:100px;">认证</button>
-                    <button id="btnQuit" style="display: inline-block; width: 100px; margin-left: 20px;">退出</button>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script type="text/javascript">

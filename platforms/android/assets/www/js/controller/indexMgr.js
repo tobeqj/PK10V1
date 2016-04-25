@@ -11,14 +11,27 @@ pk10.indexMgr = function(){
         initNavbar();
         initContentSize();
         showDefaultPage();
-    }
 
-    var onDeviceReady = function() {
+        $('#btnTest').click(function(){
+           openLicenseWin();
+        });
+    };
+
+    var openLicenseWin = function(){
         var uuid = device.uuid;
-        var license = localStorage.license;
-        if(license && licenseHelper.checkLicense(uuid, license)){
-            initPage();
-        } else{
+        if($('#licensePopup').length){
+            $('#licensePopup').popup('open');
+            return;
+        }
+
+        $.get('licensePopup.html', function(html){
+            /*var $popup = $(html);
+             $popup.appendTo('body');
+             $popup.trigger("create");*/
+            var $popup = $(html);
+            $popup.appendTo("div[data-role=page]:first");
+            $popup.trigger('create');
+            $('#licensePopup').popup();
             $('#uuid').text(uuid);
             $('#btnCopyUuid').click(function(){
                 clipboard.copy(
@@ -49,6 +62,16 @@ pk10.indexMgr = function(){
                 navigator.app.exitApp();
             });
             $('#licensePopup').popup('open');
+        });
+    }
+
+    var onDeviceReady = function() {
+        var uuid = device.uuid;
+        var license = localStorage.license;
+        if(license && licenseHelper.checkLicense(uuid, license)){
+            initPage();
+        } else{
+            openLicenseWin();
         }
     };
 

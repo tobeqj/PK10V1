@@ -11,6 +11,18 @@ var licenseHelper = function(){
          return RSAkey;
      };
 
+    var getEncryptTtext = function(passPhrase, plainText){
+        // 生成RSA密钥
+        var RSAkey = getRSAKey(passPhrase);
+        // RSA公钥:
+        var PublicKeyString = cryptico.publicKeyString(RSAkey);
+        //使用公钥加密
+        var EncryptionResult = cryptico.encrypt(plainText, PublicKeyString);
+        var encryptText = EncryptionResult.cipher;//密文
+
+        return encryptText;
+    };
+
     var getDecryptText = function(passPhrase, encryptText){
         // 生成RSA密钥
         var RSAkey = getRSAKey(passPhrase);
