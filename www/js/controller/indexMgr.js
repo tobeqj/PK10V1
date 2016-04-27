@@ -8,7 +8,7 @@ pk10.indexMgr = function(){
 
     var onDeviceReady = function() {
         var license = localStorage.license;
-        if(license && licenseHelper.checkLicense(license)){
+        if(license && licenseHelper.checkLicense(license).isValid){
             initPage();
         } else{
             pk10.licenseMgr.openRegisterWin(function(){

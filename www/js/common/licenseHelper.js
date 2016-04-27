@@ -34,9 +34,18 @@ var licenseHelper = function(){
         checkLicense: function(license){
             var decryptText = getDecryptText(license);
             var licenseInfo = JSON.parse(decryptText);
-            if(!licenseInfo.uuid || !licenseInfo.expirationDate) return false;
-            if(licenseInfo.uuid !== device.uuid) return false;
-            return new Date().getTime() < new Date(licenseInfo.expirationDate).getTime();
+            var result = new LicenseCheckResult();
+            if(!licenseInfo.uuid || !licenseInfo.expirationDate) {
+                result.isValid = false;
+            } else if(licenseInfo.uuid !== device.uuid) {
+                result.isValid = false;
+            } else{
+                var expirationDate = new Date(licenseInfo.expirationDate);
+                result.isValid = new Date().getTime() < expirationDate.getTime();
+                result.exirationDate = expirationDate;
+            }
+
+            return result;
         }
     };
 

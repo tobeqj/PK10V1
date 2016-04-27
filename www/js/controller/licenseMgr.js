@@ -4,8 +4,36 @@
 var pk10 = pk10 || {};
 pk10.licenseMgr = function(){
 
-    var openRegisterWin = function(success){
+    var onCopyUuidBtnClick = function(){
+        clipboard.copy(
+            uuid,
+            function(r){
+                window.plugins.toast.showShortCenter("复制成功！");
+            },
+            function(e){
+                window.plugins.toast.showShortCenter("复制失败！");
+            }
+        );
+    };
 
+    var onRegisterBtnClick = function(){
+        var license = $('#license').val();
+        localStorage.license = license;
+        if(!license){
+            window.plugins.showShortCenter("请输入授权码！");
+            return;
+        }
+        var checkResult = licenseHelper.checkLicense(license);
+        if(checkResult.isValid){
+            alert("授权成功，有效期至{0}。".format(checkResult.exirationDate.format("yyyy-MM-dd")));
+            $('#licensePopup').popup('close');
+            if(success) success();
+        } else {
+            window.plugins.showShortCenter("授权码不正确！");
+        }
+    };
+
+    var openRegisterWin = function(success){
         if($('#licensePopup').length){
             $('#licensePopup').popup('open');
             return;
@@ -20,34 +48,9 @@ pk10.licenseMgr = function(){
             $popup.trigger('create');
             $('#licensePopup').popup();
             $('#uuid').text(device.uuid);
-            $('#btnCopyUuid').click(function(){
-                clipboard.copy(
-                    uuid,
-                    function(r){
-                        window.plugins.toast.showShortCenter("复制成功！");
-                    },
-                    function(e){
-                        window.plugins.toast.showShortCenter("复制失败！");
-                    }
-                );
-            });
-            $('#btnLicenseOk').click(function(){
-                var license = $('#license').val();
-                localStorage.license = license;
-                if(!license){
-                    window.plugins.showShortCenter("请输入授权码！");
-                    return;
-                }
-                if(licenseHelper.checkLicense(license)){
-                    $('#licensePopup').popup('close');
-                    if(success) success();
-                } else {
-                    window.plugins.showShortCenter("授权码不正确！");
-                }
-            });
-            $('#btnQuit').click(function(){
-                navigator.app.exitApp();
-            });
+            $('#btnCopyUuid').click(onCopyUuidBtnClick);
+            $('#btnRegister').click(onRegisterBtnClick);
+            $('#btnQuit').click(navigator.app.exitApp);
             $('#licensePopup').popup('open');
         });
     };
