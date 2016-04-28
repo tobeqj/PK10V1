@@ -8,7 +8,7 @@ pk10.indexMgr = function(){
 
     var onDeviceReady = function() {
         var license = localStorage.license;
-        if(license && licenseHelper.checkLicense(license).isValid){
+        if(license && licenseService.checkLicense(license).isValid){
             initPage();
         } else{
             pk10.licenseMgr.openRegisterWin(function(){
@@ -35,11 +35,11 @@ pk10.indexMgr = function(){
         initContentSize();
         showDefaultPage();
 
-        $('#btnTest').click(function(){
+        /*$('#btnTest').click(function(){
             pk10.licenseMgr.openRegisterWin(function(){
                 initPage();
             });
-        });
+        });*/
     };
 
     var initContentSize = function () {

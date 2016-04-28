@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e45c2968-f718-4e7b-b9f7-a64cdb8fc675" name="Default" comment="将授权提示框抽逻辑提取到一个独立的JS文件中，并修改授权码验证逻辑。">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/model/LincenseCheckResult.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/common/licenseHelper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/common/licenseHelper.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/www/js/common/licenseHelper.min.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/www/js/common/licenseHelper.js" afterPath="$PROJECT_DIR$/www/js/services/licenseService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/indexMgr.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/indexMgr.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/html/index.html" afterPath="$PROJECT_DIR$/www/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/html/licensePopup.html" afterPath="$PROJECT_DIR$/www/html/licensePopup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/common/licenseHelper.js" afterPath="$PROJECT_DIR$/www/js/common/licenseHelper.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/indexMgr.js" afterPath="$PROJECT_DIR$/www/js/controller/indexMgr.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/licenseMgr.js" afterPath="$PROJECT_DIR$/www/js/controller/licenseMgr.js" />
     </list>
@@ -29,14 +35,24 @@
     <favorites_list name="PK10V1" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.54296505">
+    <splitter split-orientation="horizontal" split-proportion="0.48595944">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="licenseHelper.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/www/js/common/licenseHelper.js">
+          <file leaf-file-name="licenseService.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/js/services/licenseService.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+                  <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="logger.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/js/common/logger.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -45,20 +61,20 @@
           <file leaf-file-name="indexMgr.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/www/js/controller/indexMgr.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+                <state vertical-scroll-proportion="-11.4">
+                  <caret line="37" column="41" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="41" />
                   <folding>
-                    <element signature="e#477#994#0" expanded="false" />
-                    <element signature="e#1324#1630#0" expanded="false" />
-                    <element signature="e#1665#2260#0" expanded="false" />
-                    <element signature="e#2295#2831#0" expanded="false" />
-                    <element signature="e#2867#3119#0" expanded="false" />
-                    <element signature="e#3155#3407#0" expanded="false" />
-                    <element signature="e#3446#3593#0" expanded="false" />
-                    <element signature="e#3632#5584#0" expanded="false" />
-                    <element signature="e#3733#4960#0" expanded="false" />
-                    <element signature="e#5025#5578#0" expanded="false" />
-                    <element signature="e#5623#6069#0" expanded="false" />
+                    <element signature="e#478#995#0" expanded="false" />
+                    <element signature="e#1329#1635#0" expanded="false" />
+                    <element signature="e#1670#2265#0" expanded="false" />
+                    <element signature="e#2300#2836#0" expanded="false" />
+                    <element signature="e#2872#3124#0" expanded="false" />
+                    <element signature="e#3160#3412#0" expanded="false" />
+                    <element signature="e#3451#3598#0" expanded="false" />
+                    <element signature="e#3637#5589#0" expanded="false" />
+                    <element signature="e#3738#4965#0" expanded="false" />
+                    <element signature="e#5030#5583#0" expanded="false" />
+                    <element signature="e#5628#6074#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -67,9 +83,10 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/www/html/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.31986532">
-                  <caret line="46" column="46" selection-start-line="45" selection-start-column="26" selection-end-line="46" selection-end-column="46" />
+                <state vertical-scroll-proportion="1.492248">
+                  <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
                   <folding>
+                    <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -82,32 +99,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="licensePopup.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/www/html/licensePopup.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0">
-                  <caret line="0" column="63" selection-start-line="0" selection-start-column="63" selection-end-line="0" selection-end-column="63" />
-                  <folding>
-                    <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#button#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fileHelper.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/www/js/common/fileHelper.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -115,15 +106,12 @@
           <file leaf-file-name="licenseMgr.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.21382637">
-                  <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+                <state vertical-scroll-proportion="2.7578125">
+                  <caret line="53" column="73" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
                   <folding>
                     <element signature="e#0#41#0" expanded="false" />
-                    <element signature="e#135#400#0" expanded="false" />
-                    <element signature="e#442#990#0" expanded="false" />
-                    <element signature="e#1075#1152#0" expanded="false" />
-                    <element signature="e#1789#1917#0" expanded="false" />
-                    <element signature="e#1799#1870#0" expanded="false" />
+                    <element signature="e#1944#2072#0" expanded="false" />
+                    <element signature="e#1954#2025#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -195,9 +183,11 @@
         <option value="$PROJECT_DIR$/www/html/home.html" />
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/js/model/LincenseInfo.js" />
-        <option value="$PROJECT_DIR$/www/js/controller/indexMgr.js" />
         <option value="$PROJECT_DIR$/www/html/licensePopup.html" />
         <option value="$PROJECT_DIR$/www/js/common/licenseHelper.js" />
+        <option value="$PROJECT_DIR$/www/js/common/licenseService.js" />
+        <option value="$PROJECT_DIR$/www/js/controller/indexMgr.js" />
+        <option value="$PROJECT_DIR$/www/js/services/licenseService.js" />
         <option value="$PROJECT_DIR$/www/js/controller/licenseMgr.js" />
         <option value="$PROJECT_DIR$/www/html/index.html" />
       </list>
@@ -245,7 +235,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -281,26 +271,8 @@
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PK10V1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PK10V1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,10 +293,6 @@
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -337,34 +305,16 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PK10V1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PK10V1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/Pk10License" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -374,18 +324,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Felix\workspace\PK10V1\www\js\services" />
+      <recent name="C:\Users\Felix\workspace\PK10V1\www\html" />
+      <recent name="C:\Users\Felix\workspace\PK10V1\www" />
+      <recent name="C:\Users\Felix\workspace\PK10V1\www\js\lib" />
+      <recent name="C:\Users\Felix\workspace\PK10V1\www\img" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Felix\workspace\PK10V1\www\js\services" />
       <recent name="C:\Users\Felix\workspace\PK10V1\www\js\controller" />
       <recent name="C:\Users\Felix\workspace\PK10V1\www\js\common" />
       <recent name="C:\Users\Felix\workspace\PK10V1\www\js\cordova\plugins" />
-      <recent name="C:\Users\Felix\workspace\PK10V1\www\css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Felix\workspace\PK10V1\www\html" />
-      <recent name="C:\Users\Felix\workspace\PK10V1\www" />
-      <recent name="C:\Users\Felix\workspace\PK10V1\www\js\lib" />
-      <recent name="C:\Users\Felix\workspace\PK10V1\www\img" />
       <recent name="C:\Users\Felix\workspace\PK10V1\www\css" />
     </key>
   </component>
@@ -567,11 +517,12 @@
     <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17394696" sideWeight="0.48726115" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2074883" sideWeight="0.48726115" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.516129" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="版本控制" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.516129" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31748468" sideWeight="0.5031201" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960998" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32565284" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31643626" sideWeight="0.49687988" order="12" side_tool="false" content_ui="tabs" />
@@ -581,7 +532,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -900,14 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/common/logger.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.1221865">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/dal/dbHelper.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1221865">
@@ -934,10 +876,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/common/licenseHelper.min.js">
+    <entry file="file://$PROJECT_DIR$/www/js/common/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="684" selection-start-line="0" selection-start-column="684" selection-end-line="0" selection-end-column="684" />
+        <state vertical-scroll-proportion="0.27170417">
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/common/fileHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.59375">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -956,70 +906,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/common/fileHelper.js">
+    <entry file="file://$PROJECT_DIR$/www/js/common/logger.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/common/common.js">
+    <entry file="file://$PROJECT_DIR$/www/js/lib/json2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27170417">
-          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="34" />
+        <state vertical-scroll-proportion="-13.25">
+          <caret line="181" column="53" selection-start-line="181" selection-start-column="53" selection-end-line="181" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21382637">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-            <element signature="e#135#400#0" expanded="false" />
-            <element signature="e#442#990#0" expanded="false" />
-            <element signature="e#1075#1152#0" expanded="false" />
-            <element signature="e#1789#1917#0" expanded="false" />
-            <element signature="e#1799#1870#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/common/licenseHelper.js">
+    <entry file="file://$PROJECT_DIR$/www/js/services/licenseService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controller/indexMgr.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        <state vertical-scroll-proportion="-11.4">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="41" />
           <folding>
-            <element signature="e#477#994#0" expanded="false" />
-            <element signature="e#1324#1630#0" expanded="false" />
-            <element signature="e#1665#2260#0" expanded="false" />
-            <element signature="e#2295#2831#0" expanded="false" />
-            <element signature="e#2867#3119#0" expanded="false" />
-            <element signature="e#3155#3407#0" expanded="false" />
-            <element signature="e#3446#3593#0" expanded="false" />
-            <element signature="e#3632#5584#0" expanded="false" />
-            <element signature="e#3733#4960#0" expanded="false" />
-            <element signature="e#5025#5578#0" expanded="false" />
-            <element signature="e#5623#6069#0" expanded="false" />
+            <element signature="e#478#995#0" expanded="false" />
+            <element signature="e#1329#1635#0" expanded="false" />
+            <element signature="e#1670#2265#0" expanded="false" />
+            <element signature="e#2300#2836#0" expanded="false" />
+            <element signature="e#2872#3124#0" expanded="false" />
+            <element signature="e#3160#3412#0" expanded="false" />
+            <element signature="e#3451#3598#0" expanded="false" />
+            <element signature="e#3637#5589#0" expanded="false" />
+            <element signature="e#3738#4965#0" expanded="false" />
+            <element signature="e#5030#5583#0" expanded="false" />
+            <element signature="e#5628#6074#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.7578125">
+          <caret line="53" column="73" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+            <element signature="e#1944#2072#0" expanded="false" />
+            <element signature="e#1954#2025#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31986532">
-          <caret line="46" column="46" selection-start-line="45" selection-start-column="26" selection-end-line="46" selection-end-column="46" />
+        <state vertical-scroll-proportion="1.492248">
+          <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
           <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />

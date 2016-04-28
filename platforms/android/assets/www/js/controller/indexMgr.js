@@ -6,72 +6,14 @@ pk10.indexMgr = function(){
     var _currentPage;
     var _mySwiper;
 
-    var initPage = function(){
-        initSwiper();
-        initNavbar();
-        initContentSize();
-        showDefaultPage();
-
-        $('#btnTest').click(function(){
-           openLicenseWin();
-        });
-    };
-
-    var openLicenseWin = function(){
-        var uuid = device.uuid;
-        if($('#licensePopup').length){
-            $('#licensePopup').popup('open');
-            return;
-        }
-
-        $.get('licensePopup.html', function(html){
-            /*var $popup = $(html);
-             $popup.appendTo('body');
-             $popup.trigger("create");*/
-            var $popup = $(html);
-            $popup.appendTo("div[data-role=page]:first");
-            $popup.trigger('create');
-            $('#licensePopup').popup();
-            $('#uuid').text(uuid);
-            $('#btnCopyUuid').click(function(){
-                clipboard.copy(
-                    uuid,
-                    function(r){
-                        window.plugins.toast.showShortCenter("复制成功！");
-                    },
-                    function(e){
-                        window.plugins.toast.showShortCenter("复制失败！");
-                    }
-                );
-            });
-            $('#btnLicenseOk').click(function(){
-                var license = $('#license').val();
-                localStorage.license = license;
-                if(!license){
-                    window.plugins.showShortCenter("请输入授权码！");
-                    return;
-                }
-                if(licenseHelper.checkLicense(uuid, license)){
-                    initPage();
-                    $('#licensePopup').popup('close')
-                } else {
-                    window.plugins.showShortCenter("授权码不正确！");
-                }
-            });
-            $('#btnQuit').click(function(){
-                navigator.app.exitApp();
-            });
-            $('#licensePopup').popup('open');
-        });
-    }
-
     var onDeviceReady = function() {
-        var uuid = device.uuid;
         var license = localStorage.license;
-        if(license && licenseHelper.checkLicense(uuid, license)){
+        if(license && licenseService.checkLicense(license).isValid){
             initPage();
         } else{
-            openLicenseWin();
+            pk10.licenseMgr.openRegisterWin(function(){
+                initPage();
+            });
         }
     };
 
@@ -86,6 +28,19 @@ pk10.indexMgr = function(){
             document.addEventListener('backbutton', onBackBtnDown, false);
         }, 3000);
     }
+
+    var initPage = function(){
+        initSwiper();
+        initNavbar();
+        initContentSize();
+        showDefaultPage();
+
+        /*$('#btnTest').click(function(){
+            pk10.licenseMgr.openRegisterWin(function(){
+                initPage();
+            });
+        });*/
+    };
 
     var initContentSize = function () {
         var widowHeight = $(window).height();

@@ -1,7 +1,7 @@
 /**
  * Created by Felix on 2016/4/23.
  */
-var licenseHelper = function(){
+var licenseService = function(){
      var _rsaKey;
 
      document.addEventListener("deviceready", function(){
@@ -33,7 +33,12 @@ var licenseHelper = function(){
     var properties = {
         checkLicense: function(license){
             var decryptText = getDecryptText(license);
-            var licenseInfo = JSON.parse(decryptText);
+            var licenseInfo;
+            try{
+                licenseInfo = JSON.parse(decryptText)
+            }catch(e) {
+                licenseInfo = {};
+            }
             var result = new LicenseCheckResult();
             if(!licenseInfo.uuid || !licenseInfo.expirationDate) {
                 result.isValid = false;
