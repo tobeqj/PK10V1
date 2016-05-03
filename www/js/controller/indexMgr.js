@@ -18,7 +18,7 @@ pk10.indexMgr = function(){
     };
 
     var onBackBtnDown = function() {
-        window.plugins.toast.showShortBottom("再点击一次退出！");
+        window.plugins.toast.showShortBottom(pk10.msgs.exitTip);
         document.removeEventListener('backbutton', onBackBtnDown, false);
         document.addEventListener('backbutton', navigator.app.exitApp, false);
         // 3秒后重新注册
@@ -30,16 +30,23 @@ pk10.indexMgr = function(){
     }
 
     var initPage = function(){
+        initPageText();
         initSwiper();
         initNavbar();
         initContentSize();
         showDefaultPage();
+    };
 
-        /*$('#btnTest').click(function(){
-            pk10.licenseMgr.openRegisterWin(function(){
-                initPage();
-            });
-        });*/
+    var initPageText = function(){
+        $('#historyTitle').text(pk10.msgs.historyPageTitle);
+        $('#homeTitle').text(pk10.msgs.homePageTitle);
+        $('#settingTitle').text(pk10.msgs.settingPageTitle);
+        $('#btnClear').text(pk10.msgs.btnClear);
+        $('#btnComplete').text(pk10.msgs.btnComplete);
+        $('#btnReset').text(pk10.msgs.btnReset);
+        $('#btnHistory').text(pk10.msgs.historyMenu);
+        $('#btnHome').text(pk10.msgs.homeMenu);
+        $('#btnSetting').text(pk10.msgs.settingMenu);
     };
 
     var initContentSize = function () {

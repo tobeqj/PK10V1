@@ -16,7 +16,7 @@
         $(awardNumbers).each(function(i, num){
             $balls[i].className = "no" + num;
         });
-        $('#periodNumber').text(data.current.periodNumber);
+        $('#currentPeriodNumber').text(pk10.msgs.currentPeriodNumber.format(data.current.periodNumber));
     };
 
     var updateNextTimeInfo = function(){
@@ -41,7 +41,7 @@
 
     var showWaittingAwardResultMsg = function(){
         $('#currentAwardNumbers').hide();
-        $('#periodNumber').text(_currentPeriodNumber + 1);
+        $('#currentPeriodNumber').text(pk10.msgs.currentPeriodNumber.format(_currentPeriodNumber + 1));
         $('#waittingMsg').show();
         $('#hours').text("00");
         $('#minutes').text("00");

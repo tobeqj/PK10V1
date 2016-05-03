@@ -19,7 +19,7 @@ pk10.settingMgr = function() {
         $('#btnComplete').click(function () {
             var cycle = $('#cycle').val();
             if (!cycle) {
-                window.plugins.toast.showShortCenter("请输入期数！");
+                window.plugins.toast.showShortCenter(pk10.msgs.cycleTip);
                 return;
             }
 
@@ -30,20 +30,20 @@ pk10.settingMgr = function() {
                 break;
             }
             if (!hasProp) {
-                window.plugins.toast.showShortCenter("请设置单双！");
+                window.plugins.toast.showShortCenter(pk10.msgs.danshuangDaxiaoTip);
                 return;
             }
 
             var settings = getSettings();
             settingService.saveSetting(cycle, settings,
                 function () {
-                    window.plugins.toast.showShortCenter("设置成功！");
+                    window.plugins.toast.showShortCenter(pk10.msgs.setSuccess);
                     setEditable(false);
                     pk10.indexMgr.showPage($('#homePage'));
                     pk10.homeMgr.refreshTable();
                 },
                 function () {
-                    window.plugins.toast.showShortCenter("设置失败！");
+                    window.plugins.toast.showShortCenter(pk10.msgs.setFailed);
                 }
             );
         });
@@ -56,6 +56,36 @@ pk10.settingMgr = function() {
     var initResetBtn = function() {
         $('#btnReset').click(function() {
             //clearSetting();
+            setEditable(true);
+        });
+    };
+
+    var initPageText = function(){
+        $('#cycleLabel').text(pk10.msgs.cycleLabel);
+    };
+
+    var initData = function() {
+        settingService.getLastSetting(function (result) {
+            if (result) {
+                setEditable(false);
+                var cycle = result.cycle;
+                var settings = result.settings;
+                $('#cycle').val(cycle);
+                $(settings).each(function(i, setting) {
+                    if (setting.danshuang) {
+                        $('input:radio[name="danshuang' + setting.num + '"][value="' + setting.danshuang + '"]')
+                            .attr('checked', true).checkboxradio("refresh");
+                    }
+                    if (setting.daxiao) {
+                        $('input:radio[name="daxiao' + setting.num + '"][value="' + setting.daxiao + '"]')
+                            .attr('checked', true).checkboxradio("refresh");
+                    }
+                });
+            } else {
+                setEditable(true);
+            }
+        }, function(){
+            window.plugin.toast.showShortCenter(pk10.msgs.getSettingFailed);
             setEditable(true);
         });
     };
@@ -92,34 +122,9 @@ pk10.settingMgr = function() {
         }
     };
 
-    var initData = function() {
-        settingService.getLastSetting(function (result) {
-            if (result) {
-                setEditable(false);
-                var cycle = result.cycle;
-                var settings = result.settings;
-                $('#cycle').val(cycle);
-                $(settings).each(function(i, setting) {
-                    if (setting.danshuang) {
-                        $('input:radio[name="danshuang' + setting.num + '"][value="' + setting.danshuang + '"]')
-                            .attr('checked', true).checkboxradio("refresh");
-                    }
-                    if (setting.daxiao) {
-                        $('input:radio[name="daxiao' + setting.num + '"][value="' + setting.daxiao + '"]')
-                            .attr('checked', true).checkboxradio("refresh");
-                    }
-                });
-            } else {
-                setEditable(true);
-            }
-        }, function(){
-            window.plugin.toast.showShortCenter("获取设置信息失败！");
-            setEditable(true);
-        });
-    };
-
     var properties = {
         initPage: function () {
+            initPageText();
             initData();
             initRadio();
             initCompleteBtn();

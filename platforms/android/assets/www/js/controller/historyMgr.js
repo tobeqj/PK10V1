@@ -14,10 +14,20 @@ pk10.historyMgr = function(){
         });
     };
 
+    var initDateBox = function(){
+        $('#date').mobiscroll().date({
+            theme: "wp-light",
+            mode: "scroller",
+            display: "modal",
+            lang: "zh"
+        });
+        var defaultDate = new Date().addDays(-1);
+        $("#date").val(defaultDate.format("yyyy/MM/dd"));
+    };
+
     var properties = {
         initPage: function(){
-            var defaultDate = new Date().addDays(-1);
-            $("#date").val(defaultDate.format("yyyy-MM-dd"));
+            initDateBox();
             $('#btnSearch').click(onSearch);
             onSearch();
         }
