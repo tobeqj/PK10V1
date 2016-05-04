@@ -94,7 +94,7 @@
                     _isTableInited = true;
                     if (success) success();
                 }, function (err) {
-                    window.plugins.toast.showLongCenter("获取本期开奖数据失败！");
+                    window.plugins.toast.showLongCenter(pk10.msgs.getCurrentAwardDataFailed);
                     if(error) error(err);
                 });
             }, error);

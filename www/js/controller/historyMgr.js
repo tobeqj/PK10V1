@@ -9,7 +9,7 @@ pk10.historyMgr = function(){
         maskUtil.showMask();
         var date = new Date($('#date').val());
         tableService.initTable(date, $('#tbHistoryResult'), maskUtil.hideMask, function(){
-            window.plugins.toast.showShortCenter("查询失败！");
+            window.plugins.toast.showShortCenter(pk10.msgs.searchFailed);
             maskUtil.hideMask();
         });
     };

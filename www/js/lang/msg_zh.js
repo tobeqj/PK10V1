@@ -24,6 +24,10 @@ pk10.msgs = {
     currentPeriodNumber: "第{0}期",
     nextAwardTimeSpan: "离下期开奖时间还剩：",
     waitingAwardResult: "等待开奖结果......",
+    getCurrentAwardDataFailed: "获取本期开奖数据失败！",
+    getAwardDataFailed: "获取开奖数据失败，请检查网络是否开启。",
+    noAwardRecord: "没有开奖记录！",
+    noSetting: "请先到设置页面填写设置信息！",
     resultTableThPeriodNumber: "期号",
     resultTableThNumber: "号码",
     resultTableThPosition: "位置",
@@ -47,5 +51,19 @@ pk10.msgs = {
 
     // history
     searchDateLabel: "查询日期：",
+    searchFailed: "查询失败！",
 
+    // license
+    copySuccess: "复制成功！",
+    copyFailed: "复制失败！",
+    licenseIsRequired: "请输入授权码！",
+    licenseIsExpired: "授权码已过期！",
+    licenseIsInvalid: "授权码不正确！",
+    registerSuccess: "授权成功，有效期至{0}。",
+    licenseWinTitle: "授权",
+    licenseWinContent: "您的手机识别码为：{0}，请向软件提供者提供该识别码来获取授权码。联系方式：QQ:{1}",
+    licenseInputLabel: "授权码：",
+    btnCopyUuid: "复制识别码",
+    btnRegister: "认证",
+    btnExit: "退出",
 };

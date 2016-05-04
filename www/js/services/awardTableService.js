@@ -65,7 +65,7 @@ var awardTableService = function(){
                     records.reverse();
                     if (success) success(records);
                 }, function (err) {
-                    window.plugins.toast.showLongCenter("获取开奖数据失败，请检查网络是否开启。");
+                    window.plugins.toast.showLongCenter(pk10.msgs.getAwardDataFailed);
                     if (error) error(err);
                 });
             };
@@ -236,7 +236,7 @@ var awardTableService = function(){
                     if (!setting || !setting.settings) {
                         var $tr = $('<tr></tr>');
                         var $td = $('<td colspan="8"></td>');
-                        $td.text("请先到设置页面填写设置信息！");
+                        $td.text(pk10.msgs.noSetting);
                         $tr.append($td);
                         $tbody.append($tr);
                         if(error) error();
@@ -251,14 +251,14 @@ var awardTableService = function(){
                         } else {
                             var $tr = $('<tr></tr>');
                             var $td = $('<td colspan="8"></td>');
-                            $td.text("没有开奖记录！");
+                            $td.text(pk10.msgs.noAwardRecord);
                             $tr.append($td);
                             $tbody.append($tr);
                         }
                         if(success) success(_currentAwardResult);
                     }, error);
                 }, function(err){
-                    window.plugin.toast.showShortCenter("获取设置信息失败！");
+                    window.plugin.toast.showShortCenter(pk10.msgs.getSettingFailed);
                     if(error) error(err);
                 });
             },
