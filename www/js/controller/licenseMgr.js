@@ -5,22 +5,6 @@ var pk10 = pk10 || {};
 pk10.licenseMgr = function(){
     var _onRegisterSuccess;
 
-    var initWinText = function(){
-        $('#licenseWinTitle').text(pk10.msgs.licenseWinTitle);
-        $('#licenseWinContent').text(pk10.msgs.licenseWinContent.format(device.uuid, config.qq))
-        $('#licenseLabel').text(pk10.msgs.licenseInputLabel);
-        $('#btnCopyUuid').text(pk10.msgs.btnCopyUuid);
-        $('#btnRegister').text(pk10.msgs.btnRegister);
-        $('#btnQuit').text(pk10.msgs.btnExit);
-    };
-
-    var initWin = function(){
-        initWinText();
-        $('#btnCopyUuid').click(onCopyUuidBtnClick);
-        $('#btnRegister').click(onRegisterBtnClick);
-        $('#btnQuit').click(navigator.app.exitApp);
-    };
-
     var onCopyUuidBtnClick = function(){
         clipboard.copy(
             device.uuid,
@@ -52,19 +36,41 @@ pk10.licenseMgr = function(){
         }
     };
 
+    var initWinText = function(){
+        $('#licenseWinTitle').text(pk10.msgs.licenseWinTitle);
+        $('#licenseWinContent').text(pk10.msgs.licenseWinContent.format(device.uuid, config.qq))
+        $('#licenseLabel').text(pk10.msgs.licenseInputLabel);
+        $('#btnCopyUuid').text(pk10.msgs.btnCopyUuid);
+        $('#btnRegister').text(pk10.msgs.btnRegister);
+        $('#btnQuit').text(pk10.msgs.btnExit);
+    };
+
+    var initWin = function(){
+        initWinText();
+        $('#btnCopyUuid').click(onCopyUuidBtnClick);
+        $('#btnRegister').click(onRegisterBtnClick);
+        $('#btnQuit').click(navigator.app.exitApp);
+    };
+
+    var getWin = function(callback){
+        if($('#licensePopup').length) {
+            callback($('#licensePopup'));
+        } else{
+            $.get('licensePopup.html', function(html){
+                var $popup = $(html);
+                $popup.appendTo("div[data-role=page]:first");
+                $popup.trigger('create');
+                $popup.popup();
+                callback($popup);
+            });
+        }
+    };
+
     var openRegisterWin = function(success){
         _onRegisterSuccess = success;
-        if($('#licensePopup').length){
-            $('#licensePopup').popup('open');
-            return;
-        }
-        $.get('licensePopup.html', function(html){
-            var $popup = $(html);
-            $popup.appendTo("div[data-role=page]:first");
-            $popup.trigger('create');
-            $('#licensePopup').popup();
-            $('#licensePopup').popup('open');
+        getWin(function($popup){
             initWin();
+            $popup.popup('open');
         });
     };
 
