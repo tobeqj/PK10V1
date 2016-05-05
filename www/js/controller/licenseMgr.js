@@ -4,6 +4,7 @@
 var pk10 = pk10 || {};
 pk10.licenseMgr = function(){
     var _onRegisterSuccess;
+    var _exirationDate;
 
     var onCopyUuidBtnClick = function(){
         clipboard.copy(
@@ -26,7 +27,9 @@ pk10.licenseMgr = function(){
         }
         var checkResult = licenseService.checkLicense(license);
         if(checkResult.isValid){
-            alert(pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd")));
+            //alert(pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd")));
+            var msg = pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd"));
+            dialogUtil.alert(pk10.msgs.registerSuccessTitle, msg);
             $('#licensePopup').popup('close');
             if(_onRegisterSuccess) _onRegisterSuccess();
         } else if(checkResult.exirationDate){
@@ -73,6 +76,21 @@ pk10.licenseMgr = function(){
             $popup.popup('open');
         });
     };
+
+    timedTaskService.addTask(function(){
+        if(_exirationDate){
+            if(new Date().getTime() >= _exirationDate.getTime() && $('#licensePopup').is(':hidden')){
+                openRegisterWin();
+            }
+        } else{
+            var license = localStorage.license;
+            if(!license) return;
+            var checkResult = licenseService.checkLicense(license);
+            if(checkResult.isValid){
+                _exirationDate = checkResult.exirationDate;
+            }
+        }
+    });
 
     var properties = {
         /*

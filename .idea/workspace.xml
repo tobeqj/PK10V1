@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e45c2968-f718-4e7b-b9f7-a64cdb8fc675" name="Default" comment="将页面文本抽成配置文件。">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/html/alertDialog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/common/dialogUtil.js" />
+    <list default="true" id="e45c2968-f718-4e7b-b9f7-a64cdb8fc675" name="Default" comment="添加对话框">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/common/Guid.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/model/TimedTask.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/js/services/timedTaskService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/common/MaskUtil.js" afterPath="$PROJECT_DIR$/www/js/common/MaskUtil.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/html/index.html" afterPath="$PROJECT_DIR$/www/html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/licenseMgr.js" afterPath="$PROJECT_DIR$/www/js/controller/licenseMgr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/lang/msg_zh.js" afterPath="$PROJECT_DIR$/www/js/lang/msg_zh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/homeService.js" afterPath="$PROJECT_DIR$/www/js/services/homeService.js" />
     </list>
     <list id="4a0ecc57-5372-477e-a233-d272028900a7" name="Ignore" comment="" />
     <ignored path="PK10V1.iws" />
@@ -28,73 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="homeMgr.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/controller/homeMgr.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
-              <folding>
-                <element signature="e#86#199#0" expanded="false" />
-                <element signature="e#247#297#0" expanded="false" />
-                <element signature="e#335#467#0" expanded="false" />
-                <element signature="e#503#1276#0" expanded="false" />
-                <element signature="e#1300#1568#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MaskUtil.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/common/MaskUtil.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="licensePopup.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/html/licensePopup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.75">
-              <caret line="7" column="31" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dialogUtil.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/js/common/dialogUtil.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.96535796">
-              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#44#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="licenseMgr.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#41#0" expanded="false" />
-                <element signature="e#2545#2673#0" expanded="false" />
-                <element signature="e#2555#2626#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alertDialog.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/html/alertDialog.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0357144">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="21" />
+            <state vertical-scroll-proportion="-9.5">
+              <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -104,9 +45,40 @@
         <entry file="file://$PROJECT_DIR$/www/js/services/homeService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
+              <caret line="138" column="15" selection-start-line="138" selection-start-column="15" selection-end-line="138" selection-end-column="15" />
               <folding>
-                <element signature="e#264#380#0" expanded="false" />
+                <element signature="e#626#683#0" expanded="false" />
+                <element signature="e#838#1626#0" expanded="false" />
+                <element signature="e#1365#1457#0" expanded="false" />
+                <element signature="e#1462#1504#0" expanded="false" />
+                <element signature="e#1676#1963#0" expanded="false" />
+                <element signature="e#2013#2096#0" expanded="false" />
+                <element signature="e#2277#3061#0" expanded="false" />
+                <element signature="e#3099#3149#0" expanded="false" />
+                <element signature="e#4877#5032#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="licenseMgr.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.3265307">
+              <caret line="92" column="7" selection-start-line="92" selection-start-column="7" selection-end-line="92" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#41#0" expanded="false" />
+                <element signature="e#187#486#0" expanded="false" />
+                <element signature="e#261#353#0" expanded="false" />
+                <element signature="e#378#469#0" expanded="false" />
+                <element signature="e#1263#1352#0" expanded="false" />
+                <element signature="e#1358#1447#0" expanded="false" />
+                <element signature="e#1488#1874#0" expanded="false" />
+                <element signature="e#1905#2093#0" expanded="false" />
+                <element signature="e#2171#2224#0" expanded="false" />
+                <element signature="e#2229#2519#0" expanded="false" />
+                <element signature="e#2284#2507#0" expanded="false" />
+                <element signature="e#3267#3338#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -135,9 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/plugins/cordova-plugin-device/src/android/Device.java" />
-        <option value="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/www/js/cordova/plugins/cordova-plugin-device/www/device.js" />
         <option value="$PROJECT_DIR$/plugins/cordova-plugin-device/www/device.js" />
         <option value="$PROJECT_DIR$/www/js/common/rsa.js" />
         <option value="$PROJECT_DIR$/www/js/common/rsaHelper.js" />
@@ -171,21 +140,24 @@
         <option value="$PROJECT_DIR$/www/html/home.html" />
         <option value="$PROJECT_DIR$/www/js/controller/homeMgr.js" />
         <option value="$PROJECT_DIR$/www/html/history.html" />
-        <option value="$PROJECT_DIR$/www/js/services/homeService.js" />
         <option value="$PROJECT_DIR$/www/js/global/config.json" />
         <option value="$PROJECT_DIR$/www/js/common/config.js" />
-        <option value="$PROJECT_DIR$/www/html/index.html" />
         <option value="$PROJECT_DIR$/www/html/licensePopup.html" />
         <option value="$PROJECT_DIR$/www/js/global/config.js" />
         <option value="$PROJECT_DIR$/www/js/common/maskUtil.js" />
         <option value="$PROJECT_DIR$/www/js/services/awardTableService.js" />
-        <option value="$PROJECT_DIR$/www/js/lang/msg_zh.js" />
         <option value="$PROJECT_DIR$/www/js/controller/historyMgr.js" />
         <option value="$PROJECT_DIR$/www/js/common/MaskUtil.js" />
         <option value="$PROJECT_DIR$/www/js/common/alertUtil.js" />
-        <option value="$PROJECT_DIR$/www/js/controller/licenseMgr.js" />
         <option value="$PROJECT_DIR$/www/html/alertDialog.html" />
         <option value="$PROJECT_DIR$/www/js/common/dialogUtil.js" />
+        <option value="$PROJECT_DIR$/www/js/lang/msg_zh.js" />
+        <option value="$PROJECT_DIR$/www/js/common/Guid.js" />
+        <option value="$PROJECT_DIR$/www/js/model/TimedTask.js" />
+        <option value="$PROJECT_DIR$/www/js/services/timedTaskService.js" />
+        <option value="$PROJECT_DIR$/www/js/services/homeService.js" />
+        <option value="$PROJECT_DIR$/www/html/index.html" />
+        <option value="$PROJECT_DIR$/www/js/controller/licenseMgr.js" />
       </list>
     </option>
   </component>
@@ -195,9 +167,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="476" />
-    <option name="width" value="1382" />
-    <option name="height" value="1080" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1874" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -322,28 +295,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PK10V1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PK10V1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -576,7 +527,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462294983355</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="添加对话框">
+      <created>1462419114916</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1462419114916</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -589,14 +546,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="476" y="0" width="1382" height="1080" extended-state="0" />
+    <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2752976" sideWeight="0.48726115" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18681917" sideWeight="0.48726115" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="版本控制" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51317173" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="版本控制" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51244813" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31748468" sideWeight="0.5031201" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960998" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32565284" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31643626" sideWeight="0.49687988" order="12" side_tool="false" content_ui="tabs" />
@@ -606,7 +564,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -640,64 +597,16 @@
     <MESSAGE value="修改细节问题。" />
     <MESSAGE value="加入日历控件。" />
     <MESSAGE value="将页面文本抽成配置文件。" />
-    <option name="LAST_COMMIT_MESSAGE" value="将页面文本抽成配置文件。" />
+    <MESSAGE value="添加对话框" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加对话框" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="19" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/js/services/awardTableService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="238" column="11" selection-start-line="238" selection-start-column="11" selection-end-line="238" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-            <element signature="e#895#1514#0" expanded="false" />
-            <element signature="e#943#1200#0" expanded="false" />
-            <element signature="e#985#1066#0" expanded="false" />
-            <element signature="e#1072#1182#0" expanded="false" />
-            <element signature="e#1246#1384#0" expanded="false" />
-            <element signature="e#1425#1500#0" expanded="false" />
-            <element signature="e#1904#2392#0" expanded="false" />
-            <element signature="e#2118#2251#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/homeMgr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#86#199#0" expanded="false" />
-            <element signature="e#247#297#0" expanded="false" />
-            <element signature="e#335#467#0" expanded="false" />
-            <element signature="e#503#1276#0" expanded="false" />
-            <element signature="e#1300#1568#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/homeService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
-          <folding>
-            <element signature="e#264#380#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/CordovaLib/src/org/apache/cordova/Whitelist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6430318">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/CordovaLib/src/org/apache/cordova/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33251834">
@@ -772,6 +681,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="3225" selection-start-line="0" selection-start-column="3225" selection-end-line="0" selection-end-column="3225" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -829,6 +739,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1221865">
           <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -912,6 +823,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="820" selection-start-line="0" selection-start-column="820" selection-end-line="0" selection-end-column="820" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -926,6 +838,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.668919">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -933,41 +846,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36334404">
           <caret line="134" column="62" selection-start-line="134" selection-start-column="62" selection-end-line="134" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/awardDataService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5666666">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/homeService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
-          <folding>
-            <element signature="e#264#380#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/awardTableService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="238" column="11" selection-start-line="238" selection-start-column="11" selection-end-line="238" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-            <element signature="e#895#1514#0" expanded="false" />
-            <element signature="e#943#1200#0" expanded="false" />
-            <element signature="e#985#1066#0" expanded="false" />
-            <element signature="e#1072#1182#0" expanded="false" />
-            <element signature="e#1246#1384#0" expanded="false" />
-            <element signature="e#1425#1500#0" expanded="false" />
-            <element signature="e#1904#2392#0" expanded="false" />
-            <element signature="e#2118#2251#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -975,14 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7970086">
           <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43942732">
-          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -1003,10 +874,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/html/alertDialog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0357144">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controller/homeMgr.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.1828877">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#86#199#0" expanded="false" />
             <element signature="e#247#297#0" expanded="false" />
@@ -1017,43 +896,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/html/licensePopup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.75">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/licenseService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64021736">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-            <element signature="e#2545#2673#0" expanded="false" />
-            <element signature="e#2555#2626#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/html/alertDialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0357144">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/common/MaskUtil.js">
+    <entry file="file://$PROJECT_DIR$/www/js/common/maskUtil.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
@@ -1061,12 +904,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/common/dialogUtil.js">
+    <entry file="file://$PROJECT_DIR$/www/js/model/TimedTask.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.96535796">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.060962565">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/common/Guid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.857754">
+          <caret line="101" column="23" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc;n#Guid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/common/dialogUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/awardTableService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.24385026">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+            <element signature="e#895#1514#0" expanded="false" />
+            <element signature="e#943#1200#0" expanded="false" />
+            <element signature="e#985#1066#0" expanded="false" />
+            <element signature="e#1072#1182#0" expanded="false" />
+            <element signature="e#1246#1384#0" expanded="false" />
+            <element signature="e#1425#1500#0" expanded="false" />
+            <element signature="e#1904#2392#0" expanded="false" />
+            <element signature="e#2118#2251#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/timedTaskService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/lang/msg_zh.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="24" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/awardDataService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33262032">
+          <caret line="110" column="8" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5">
+          <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/html/licensePopup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14663726">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/licenseService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62994653">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/homeService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="138" column="15" selection-start-line="138" selection-start-column="15" selection-end-line="138" selection-end-column="15" />
+          <folding>
+            <element signature="e#626#683#0" expanded="false" />
+            <element signature="e#838#1626#0" expanded="false" />
+            <element signature="e#1365#1457#0" expanded="false" />
+            <element signature="e#1462#1504#0" expanded="false" />
+            <element signature="e#1676#1963#0" expanded="false" />
+            <element signature="e#2013#2096#0" expanded="false" />
+            <element signature="e#2277#3061#0" expanded="false" />
+            <element signature="e#3099#3149#0" expanded="false" />
+            <element signature="e#4877#5032#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.3265307">
+          <caret line="92" column="7" selection-start-line="92" selection-start-column="7" selection-end-line="92" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+            <element signature="e#187#486#0" expanded="false" />
+            <element signature="e#261#353#0" expanded="false" />
+            <element signature="e#378#469#0" expanded="false" />
+            <element signature="e#1263#1352#0" expanded="false" />
+            <element signature="e#1358#1447#0" expanded="false" />
+            <element signature="e#1488#1874#0" expanded="false" />
+            <element signature="e#1905#2093#0" expanded="false" />
+            <element signature="e#2171#2224#0" expanded="false" />
+            <element signature="e#2229#2519#0" expanded="false" />
+            <element signature="e#2284#2507#0" expanded="false" />
+            <element signature="e#3267#3338#0" expanded="false" />
           </folding>
         </state>
       </provider>

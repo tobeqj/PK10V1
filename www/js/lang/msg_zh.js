@@ -59,11 +59,12 @@ pk10.msgs = {
     licenseIsRequired: "请输入授权码！",
     licenseIsExpired: "授权码已过期！",
     licenseIsInvalid: "授权码不正确！",
-    registerSuccess: "授权成功，有效期至{0}。",
     licenseWinTitle: "授权",
     licenseWinContent: "您的手机识别码为：{0}，请向软件提供者提供该识别码来获取授权码。联系方式：QQ:{1}",
     licenseInputLabel: "授权码：",
     btnCopyUuid: "复制识别码",
     btnRegister: "认证",
     btnExit: "退出",
+    registerSuccess: "授权成功，有效期至{0}。",
+    registerSuccessTitle: "提示",
 };
