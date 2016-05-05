@@ -28,10 +28,11 @@ pk10.licenseMgr = function(){
         var checkResult = licenseService.checkLicense(license);
         if(checkResult.isValid){
             //alert(pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd")));
-            var msg = pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd"));
-            dialogUtil.alert(pk10.msgs.registerSuccessTitle, msg);
             $('#licensePopup').popup('close');
-            if(_onRegisterSuccess) _onRegisterSuccess();
+            setTimeout(function(){
+                var msg = pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd"));
+                dialogUtil.alert(pk10.msgs.registerSuccessTitle, msg, _onRegisterSuccess);
+            }, 100);
         } else if(checkResult.exirationDate){
             window.plugins.toast.showShortCenter(pk10.msgs.licenseIsExpired);
         } else {

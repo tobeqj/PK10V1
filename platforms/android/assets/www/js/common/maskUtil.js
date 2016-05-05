@@ -26,9 +26,20 @@ var maskUtil = function(){
         $.mobile.loading("hide");
     }
 
+    function showLoader(msg) {
+        $.mobile.loadingMessage = msg || "正在加载数据，请稍候……";
+        $.mobile.showPageLoadingMsg() ;
+    }
+
+    function hideLoader() {
+        $.mobile.hidePageLoadingMsg();
+    }
+
     var properties = {
         showMask: showMask,
-        hideMask: hideMask
+        hideMask: hideMask,
+        showLoader: showLoader,
+        hideLoader: hideLoader
     }
 
     return properties;

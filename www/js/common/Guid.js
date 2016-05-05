@@ -15,7 +15,7 @@ function Guid(g){
     //返回一个值，该值指示 Guid 的两个实例是否表示同一个值。
     this.Equals = function(o){
         if (o && o.IsGuid){
-            return this.ToString() == o.ToString();
+            return this.toString() == o.toString();
         } else{
             return false;
         }
@@ -25,7 +25,7 @@ function Guid(g){
     this.IsGuid = function(){};
 
     //返回 Guid 类的此实例值的 String 表示形式。
-    this.ToString = function(format){
+    this.toString = function(format){
         if(typeof(format) == "string"){
             if (format == "N" || format == "D" || format == "B" || format == "P"){
                 return ToStringWithFormat(arr, format);

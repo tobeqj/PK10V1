@@ -4,6 +4,8 @@
     var _isTableInited = false;
     var _tableService = awardTableService.newInstance;
     var _timer;
+    var _taskId1;
+    var _taskId2;
 
     var insertNewAwardResultToTable = function(awardResult) {
         var $tr = _tableService.createTableRow(awardResult);
@@ -82,6 +84,36 @@
     var clearTimedTask = function(){
         if (_timer) clearInterval(_timer);
     };
+
+    var startTimedUpdateTableTask = function(){
+        if(_taskId1) timedTaskService.removeTask(_taskId1);
+        timedTaskService.addTask(function(){
+            if(!_isTableInited) return;
+            var currentTime = new Date();
+            if (currentTime.getTime() > _nextAwardTime.getTime()) {
+                showWaittingAwardResultMsg();
+                awardDataService.getCurrentAwardResult(function (data) {
+                    if (data.current.periodNumber > _currentPeriodNumber) {
+                        _currentPeriodNumber = data.current.periodNumber;
+                        _nextAwardTime = data.next.awardTime;
+                        onAwardDataUpdate(data);
+                    }
+                });
+            } else{
+                hideWaittingAwardResultMsg();
+            }
+        });
+    };
+
+    var startTimedUpdateNextTimeInfoTask = function(){
+        if(_taskId2) timedTaskService.removeTask(_taskId2);
+        timedTaskService.addTask(function(){
+            var currentTime = new Date();
+            if (currentTime.getTime() < _nextAwardTime.getTime()){
+                updateNextTimeInfo();
+            }
+        });
+    };
     
     var properties = {
         initTable: function(success, error){
@@ -101,10 +133,16 @@
         },
         initCurrentAwardInfo: function(){
             awardDataService.getCurrentAwardResult(function (data) {
+                _currentPeriodNumber = data.current.periodNumber;
+                _nextAwardTime = data.next.awardTime;
                 updateCurrentAwardInfo(data);
             });
         },
-        strartTimedUpdateData: startTimedTask
+        strartTimedUpdateData: function(){
+            //startTimedTask();
+            startTimedUpdateTableTask();
+            startTimedUpdateNextTimeInfoTask();
+        }
     };
 
     return properties;

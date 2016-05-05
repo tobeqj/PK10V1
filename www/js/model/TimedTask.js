@@ -3,5 +3,5 @@
  */
 var TimedTask = function(action){
     this.action = action;
-    this.id = Guid.NewGuid();
+    this.id = Guid.NewGuid().toString();
 };
