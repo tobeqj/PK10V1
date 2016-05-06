@@ -97,6 +97,16 @@ pk10.indexMgr = function(){
         });
     };
 
+    var initToolbar = function(){
+        $('#btnAbout').click(pk10.aboutMgr.openDialog);
+        $('#btnRegister').click(pk10.licenseMgr.openRegisterWin);
+        $('#btnExit').click(navigator.app.exitApp);
+        $.get('feedback.html', function(html){
+            $(html).appendTo('body');
+            pk10.feedbackMgr.initPage();
+        });
+    };
+
     var getPrevPage = function() {
         switch (_currentPage.attr('id')) {
             case 'homePage':

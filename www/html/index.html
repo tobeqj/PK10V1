@@ -48,18 +48,22 @@
     <script src="../js/controller/historyMgr.js"></script>
     <script src="../js/controller/settingMgr.js"></script>
     <script src="../js/controller/licenseMgr.js"></script>
+    <script src="../js/controller/aboutMgr.js"></script>
+    <script type="text/javascript">
+        $(pk10.indexMgr.initPage);
+    </script>
 </head>
 
 <body>
-    <div data-role="page" data-theme="a">
+    <div id="indexPage" data-role="page" data-theme="a">
         <!-- 功能面板 -->
-        <div data-role="panel" id="toolPanel">
+        <div data-role="panel" id="toolbar">
             <h2>更多...</h2>
             <ul data-role="listview" style="padding-right: 5px">
-                <li><a href="#">续期</a></li>
-                <li><a href="#">反馈</a></li>
-                <li><a href="#">关于</a></li>
-                <li><a href="#">退出</a></li>
+                <li><a id="btnRegister" href="#">续期</a></li>
+                <li><a id="btnFeedback"  href="#feedbackPage" data-transition="slide">反馈</a></li>
+                <li><a id="btnAbout" href="#">关于</a></li>
+                <li><a id="btnExit" href="#">退出</a></li>
             </ul>
         </div>
         <!-- 页面标题 -->
@@ -99,10 +103,6 @@
             </div>
         </div>
     </div>
-
-    <script type="text/javascript">
-        pk10.indexMgr.initPage();
-    </script>
 </body>
 
 </html>

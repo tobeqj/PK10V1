@@ -67,4 +67,15 @@ pk10.msgs = {
     btnExit: "退出",
     registerSuccess: "授权成功，有效期至{0}。",
     registerSuccessTitle: "提示",
+
+    // about
+    aboutDialogTitle: "关于",
+    appVersion: "版本：{0}",
+    appExirationDate: "有效期至：{0}",
+    contact: "联系方式：\nQQ：{0}",
+
+    // feedback
+    feedbackPageTitle: "反馈",
+    suggestLabel: "意见或反馈",
+    btnSendSuggest: "发送"
 };

@@ -13,12 +13,13 @@ pk10.licenseMgr = function(){
                 window.plugins.toast.showShortCenter(pk10.msgs.licenseIsExpired);
                 openRegisterWin();
             }
-        } else{
+        } else {
             var license = localStorage.license;
             if(!license) return;
             var checkResult = licenseService.checkLicense(license);
             if(checkResult.exirationDate){
                 _exirationDate = checkResult.exirationDate;
+                config.exirationDate = _exirationDate;
             }
         }
     });
@@ -44,17 +45,20 @@ pk10.licenseMgr = function(){
         }
         var checkResult = licenseService.checkLicense(license);
         if(checkResult.isValid){
-            //alert(pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd")));
-            $('#licensePopup').popup('close');
-            setTimeout(function(){
-                var msg = pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd"));
-                dialogUtil.alert(pk10.msgs.registerSuccessTitle, msg, _onRegisterSuccess);
-            }, 100);
+            registerSuccess();
         } else if(checkResult.exirationDate){
             window.plugins.toast.showShortCenter(pk10.msgs.licenseIsExpired);
         } else {
             window.plugins.toast.showShortCenter(pk10.msgs.licenseIsInvalid);
         }
+    };
+
+    var registerSuccess = function(){
+        $('#licensePopup').popup('close');
+        setTimeout(function(){
+            var msg = pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd"));
+            dialogUtil.alert(pk10.msgs.registerSuccessTitle, msg, _onRegisterSuccess);
+        }, 100);
     };
 
     var initWinText = function(){
@@ -73,23 +77,9 @@ pk10.licenseMgr = function(){
         $('#btnQuit').click(navigator.app.exitApp);
     };
 
-    var getWin = function(callback){
-        if($('#licensePopup').length) {
-            callback($('#licensePopup'));
-        } else{
-            $.get('licensePopup.html', function(html){
-                var $popup = $(html);
-                $popup.appendTo("div[data-role=page]:first");
-                $popup.trigger('create');
-                $popup.popup();
-                callback($popup);
-            });
-        }
-    };
-
     var openRegisterWin = function(success){
         _onRegisterSuccess = success;
-        getWin(function($popup){
+        dialogUtil.getDialog('licensePopup', 'licensePopup.html', function($popup){
             initWin();
             $popup.popup('open');
         });

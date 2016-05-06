@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>反馈</title>
-</head>
-<body>
-    <div data-role="page" data-theme="a">
-        <div data-role="header" data-position="fixed" data-tap-toggle="false">
-            <a id="btnBack" href="#" class="ui-btn-left ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow" style="display: none"></a>
-            <h1><span id="feedbackTitle">反馈</span></h1>
-        </div>
-        <div data-role="main" class="ui-content">
-            <form id="feedbackForm">
-                <label id="suggestLabel" for="suggest">意见或反馈</label>
-                <textarea id="suggest"></textarea>
-                <input type="button" id="btnSendSuggest" value="发送">
-            </form>
-        </div>
+<div id="feedbackPage" data-role="page" data-theme="a">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+        <a id="btnBack" href="#pageIndex" class="ui-btn-left ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow" style="display: none"></a>
+        <h1><span id="feedbackTitle">反馈</span></h1>
     </div>
-</body>
-</html>
+    <div data-role="main" class="ui-content">
+        <form id="feedbackForm">
+            <label id="suggestLabel" for="suggest">意见或反馈</label>
+            <textarea id="suggest"></textarea>
+            <input type="button" id="btnSendSuggest" value="发送">
+        </form>
+    </div>
+</div>
+

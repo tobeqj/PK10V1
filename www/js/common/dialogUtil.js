@@ -3,30 +3,32 @@
  */
 var dialogUtil = function(){
 
-    var getAlertDialog = function(callback, afterClose){
-        if($('#alert-popup').length){
-            callback($('#alert-popup'));
-        } else{
-            $.get('alertPopup.html', function(html){
-                var $dialog = $(html);
-                $dialog.appendTo("div[data-role=page]:first");
-                $dialog.trigger('create');
-                $dialog.popup({ afterclose: afterClose });
-                callback($dialog);
-            });
-        }
-    };
-
     var alert = function(title, content, afterClose){
-        getAlertDialog(function($dialog){
+        getDialog('alert-popup', 'alertPopup.html', function($dialog){
             $('#alert-title').text(title);
             $('#alert-content').text(content);
             $dialog.popup('open');
         }, afterClose);
     };
 
+    var getDialog = function(dialogId, source, callback, afterClose){
+        var $popup = $('#' + dialogId);
+        if($popup.length) {
+            callback($popup);
+        } else{
+            $.get(source, function(html){
+                $popup = $(html);
+                $popup.appendTo("div[data-role=page]:first");
+                $popup.trigger('create');
+                $popup.popup({ afterclose: afterClose });
+                callback($popup);
+            });
+        }
+    };
+
     var properties = {
-        alert: alert
+        alert: alert,
+        getDialog: getDialog
     };
 
     return properties;
