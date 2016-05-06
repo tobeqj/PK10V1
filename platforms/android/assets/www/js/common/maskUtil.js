@@ -4,6 +4,10 @@
 var maskUtil = function(){
     //显示遮罩层
     function showMask(msg) {
+        if($('#mask').length <= 0){
+            var $mask = $('<div id="mask" class="mask"></div>');
+            $mask.appendTo('body');
+        }
         $("#mask").css("height", $(document).height());
         $("#mask").css("width", $(document).width());
         $("#mask").show();
@@ -22,9 +26,20 @@ var maskUtil = function(){
         $.mobile.loading("hide");
     }
 
+    function showLoader(msg) {
+        $.mobile.loadingMessage = msg || "正在加载数据，请稍候……";
+        $.mobile.showPageLoadingMsg() ;
+    }
+
+    function hideLoader() {
+        $.mobile.hidePageLoadingMsg();
+    }
+
     var properties = {
         showMask: showMask,
-        hideMask: hideMask
+        hideMask: hideMask,
+        showLoader: showLoader,
+        hideLoader: hideLoader
     }
 
     return properties;

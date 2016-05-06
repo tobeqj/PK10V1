@@ -4,6 +4,10 @@
 var maskUtil = function(){
     //显示遮罩层
     function showMask(msg) {
+        if($('#mask').length <= 0){
+            var $mask = $('<div id="mask" class="mask"></div>');
+            $mask.appendTo('body');
+        }
         $("#mask").css("height", $(document).height());
         $("#mask").css("width", $(document).width());
         $("#mask").show();

@@ -5,8 +5,8 @@ var timedTaskService = function(){
     var _tasks = {};
 
     var addTask = function(action){
-        var task = new TimedTask();
-        _task[task.id] = task;
+        var task = new TimedTask(action);
+        _tasks[task.id] = task;
         return task.id;
     };
 
@@ -14,7 +14,7 @@ var timedTaskService = function(){
         delete _tasks[taskid];
     };
 
-    setTimeout(function(){
+    setInterval(function(){
         for(var taskid in _tasks){
             var task = _tasks[taskid];
             if(typeof task.action == "function"){
