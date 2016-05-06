@@ -40,7 +40,7 @@ var maskUtil = function(){
         hideMask: hideMask,
         showLoader: showLoader,
         hideLoader: hideLoader
-    }
+    };
 
     return properties;
 }();

@@ -11,7 +11,7 @@ pk10.indexMgr = function(){
         if(license && licenseService.checkLicense(license).isValid){
             initPage();
         } else{
-            pk10.licenseMgr.openRegisterWin(function(){
+            pk10.licenseMgr.openRegisterDialog(function(){
                 initPage();
             });
         }
@@ -27,12 +27,13 @@ pk10.indexMgr = function(){
             document.removeEventListener('backbutton', navigator.app.exitApp, false);
             document.addEventListener('backbutton', onBackBtnDown, false);
         }, 3000);
-    }
+    };
 
     var initPage = function(){
         initPageText();
         initSwiper();
         initNavbar();
+        initToolbar();
         initContentSize();
         showDefaultPage();
     };
@@ -99,7 +100,7 @@ pk10.indexMgr = function(){
 
     var initToolbar = function(){
         $('#btnAbout').click(pk10.aboutMgr.openDialog);
-        $('#btnRegister').click(pk10.licenseMgr.openRegisterWin);
+        $('#btnRegister').click(pk10.licenseMgr.openRegisterDialog);
         $('#btnExit').click(navigator.app.exitApp);
         $.get('feedback.html', function(html){
             $(html).appendTo('body');
@@ -185,7 +186,7 @@ pk10.indexMgr = function(){
                 }
             });
         }
-    }
+    };
 
     var showDefaultPage = function() {
         // 如果还没有设置信息，开启程序时默认打开设置页面，否则，默认打开首页
@@ -209,7 +210,7 @@ pk10.indexMgr = function(){
             document.addEventListener("backbutton", onBackBtnDown);
         },
         showPage: showPage
-    }
+    };
 
     return properties;
 }();

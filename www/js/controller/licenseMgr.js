@@ -9,7 +9,7 @@ pk10.licenseMgr = function(){
     // 过期检测
     timedTaskService.addTask(function(){
         if(_exirationDate){
-            if(new Date().getTime() >= _exirationDate.getTime() && $('#licensePopup').is(':hidden')){
+            if(new Date().getTime() >= _exirationDate.getTime() && $('#register-popup').is(':hidden')){
                 window.plugins.toast.showShortCenter(pk10.msgs.licenseIsExpired);
                 openRegisterWin();
             }
@@ -54,33 +54,33 @@ pk10.licenseMgr = function(){
     };
 
     var registerSuccess = function(){
-        $('#licensePopup').popup('close');
+        $('#register-popup').popup('close');
         setTimeout(function(){
             var msg = pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd"));
             dialogUtil.alert(pk10.msgs.registerSuccessTitle, msg, _onRegisterSuccess);
         }, 100);
     };
 
-    var initWinText = function(){
-        $('#licenseWinTitle').text(pk10.msgs.licenseWinTitle);
-        $('#licenseWinContent').text(pk10.msgs.licenseWinContent.format(device.uuid, config.qq))
+    var initDialogText = function(){
+        $('#register-title').text(pk10.msgs.registerTitle);
+        $('#register-content').text(pk10.msgs.registerContent.format(device.uuid, config.qq))
         $('#licenseLabel').text(pk10.msgs.licenseInputLabel);
         $('#btnCopyUuid').text(pk10.msgs.btnCopyUuid);
         $('#btnRegister').text(pk10.msgs.btnRegister);
         $('#btnQuit').text(pk10.msgs.btnExit);
     };
 
-    var initWin = function(){
-        initWinText();
+    var initDialog = function(){
+        initDialogText();
         $('#btnCopyUuid').click(onCopyUuidBtnClick);
         $('#btnRegister').click(onRegisterBtnClick);
         $('#btnQuit').click(navigator.app.exitApp);
     };
 
-    var openRegisterWin = function(success){
+    var openRegisterDialog = function(success){
         _onRegisterSuccess = success;
-        dialogUtil.getDialog('licensePopup', 'licensePopup.html', function($popup){
-            initWin();
+        dialogUtil.getDialog('register-popup', 'register.html', function($popup){
+            initDialog();
             $popup.popup('open');
         });
     };
@@ -91,7 +91,7 @@ pk10.licenseMgr = function(){
         @params
         @return
          */
-        openRegisterWin: openRegisterWin
+        openRegisterDialog: openRegisterDialog
     };
 
     return properties;
