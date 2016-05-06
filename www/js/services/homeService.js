@@ -87,7 +87,7 @@
 
     var startTimedUpdateTableTask = function(){
         if(_taskId1) timedTaskService.removeTask(_taskId1);
-        timedTaskService.addTask(function(){
+        _taskId1 = timedTaskService.addTask(function(){
             if(!_isTableInited) return;
             var currentTime = new Date();
             if (currentTime.getTime() > _nextAwardTime.getTime()) {
@@ -107,7 +107,7 @@
 
     var startTimedUpdateNextTimeInfoTask = function(){
         if(_taskId2) timedTaskService.removeTask(_taskId2);
-        timedTaskService.addTask(function(){
+        _taskId2 = timedTaskService.addTask(function(){
             var currentTime = new Date();
             if (currentTime.getTime() < _nextAwardTime.getTime()){
                 updateNextTimeInfo();
@@ -122,6 +122,10 @@
                 _currentPeriodNumber = currentAwardResult.periodNumber;
                 //获取最新一期的开奖数据
                 awardDataService.getCurrentAwardResult(function (data) {
+                    if (data.current.periodNumber > _currentPeriodNumber) {
+                        _currentPeriodNumber = data.current.periodNumber;
+                        insertNewAwardResultToTable(data.current);
+                    }
                     _nextAwardTime = data.next.awardTime;
                     _isTableInited = true;
                     if (success) success();
