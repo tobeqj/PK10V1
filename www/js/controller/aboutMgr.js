@@ -6,9 +6,9 @@ pk10.aboutMgr = function(){
 
     var initPageText = function(){
         var exirationDate = config.exirationDate.format("yyyy-MM-dd");
-        $('about-title').text(pk10.msgs.aboutDialogTitle.format(config.version));
-        $('about-exirationDate').text(pk10.msgs.appExirationDate.format(exirationDate))
-        $('about-contact').text(pk10.msgs.contact.format(config.qq));
+        $('#about-title').text(pk10.msgs.aboutDialogTitle.format(config.version));
+        $('#about-exirationDate').text(pk10.msgs.appExirationDate.format(exirationDate))
+        $('#about-contact').text(pk10.msgs.contact.format(config.qq));
     };
 
     var openDialog = function(){

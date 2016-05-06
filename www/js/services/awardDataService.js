@@ -98,7 +98,7 @@
             getAwardDataByDate(date, function (results) {
                 var lastAwardResult = null;
                 if(results.length){
-                    lastAwardResult = results.pop();
+                    lastAwardResult = results[0];
                 }
                 if (success) success(lastAwardResult);
             }, error);

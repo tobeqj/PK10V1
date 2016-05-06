@@ -49,6 +49,7 @@
     <script src="../js/controller/settingMgr.js"></script>
     <script src="../js/controller/licenseMgr.js"></script>
     <script src="../js/controller/aboutMgr.js"></script>
+    <script src="../js/controller/feedbackMgr.js"></script>
     <script type="text/javascript">
         $(pk10.indexMgr.initPage);
     </script>
@@ -60,10 +61,10 @@
         <div data-role="panel" id="toolbar">
             <h2>更多...</h2>
             <ul data-role="listview" style="padding-right: 5px">
-                <li><a id="btnRegister" href="#">续期</a></li>
-                <li><a id="btnFeedback"  href="#feedbackPage" data-transition="slide">反馈</a></li>
-                <li><a id="btnAbout" href="#">关于</a></li>
-                <li><a id="btnExit" href="#">退出</a></li>
+                <li><a id="toolBtnRenewed" href="#">续期</a></li>
+                <li><a id="toolBtnFeedback" href="#feedbackPage" data-transition="slide">反馈</a></li>
+                <li><a id="toolBtnAbout" href="#">关于</a></li>
+                <li><a id="toolBtnExit" href="#">退出</a></li>
             </ul>
         </div>
         <!-- 页面标题 -->
@@ -71,7 +72,7 @@
             <h1><span id="historyTitle">历史</span></h1>
         </div>
         <div id="titleHome" data-role="header" data-position="fixed" data-tap-toggle="false">
-            <a id="btnTool" href="#toolPanel" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>
+            <a id="btnTool" href="#toolbar" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>
             <h1><span id="homeTitle">今日开奖结果</span></h1>
             <a id="btnRefresh" class="ui-btn-right ui-btn ui-icon-recycle ui-btn-icon-notext ui-corner-all ui-shadow"></a>
         </div>

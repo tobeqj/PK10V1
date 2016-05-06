@@ -9,9 +9,10 @@ pk10.licenseMgr = function(){
     // 过期检测
     timedTaskService.addTask(function(){
         if(_exirationDate){
-            if(new Date().getTime() >= _exirationDate.getTime() && $('#register-popup').is(':hidden')){
+            var isPopupVisiable = $('#register-popup').length || !$('#register-popup').is(':hidden');
+            if(!isPopupVisiable && new Date().getTime() >= _exirationDate.getTime()){
                 window.plugins.toast.showShortCenter(pk10.msgs.licenseIsExpired);
-                openRegisterWin();
+                openRegisterDialog();
             }
         } else {
             var license = localStorage.license;
@@ -45,6 +46,7 @@ pk10.licenseMgr = function(){
         }
         var checkResult = licenseService.checkLicense(license);
         if(checkResult.isValid){
+            _exirationDate = checkResult.exirationDate;
             registerSuccess();
         } else if(checkResult.exirationDate){
             window.plugins.toast.showShortCenter(pk10.msgs.licenseIsExpired);
@@ -56,7 +58,7 @@ pk10.licenseMgr = function(){
     var registerSuccess = function(){
         $('#register-popup').popup('close');
         setTimeout(function(){
-            var msg = pk10.msgs.registerSuccess.format(checkResult.exirationDate.format("yyyy-MM-dd"));
+            var msg = pk10.msgs.registerSuccess.format(_exirationDate.format("yyyy-MM-dd"));
             dialogUtil.alert(pk10.msgs.registerSuccessTitle, msg, _onRegisterSuccess);
         }, 100);
     };
