@@ -61,12 +61,16 @@ pk10.msgs = {
     licenseIsInvalid: "授权码不正确！",
     licenseInputLabel: "授权码：",
     registerTitle: "授权",
-    registerContent: "您的手机识别码为：{0}，请向软件提供者提供该识别码来获取授权码。联系方式：QQ:{1}",
+    registerContent: "您的手机识别码为：{0}，请向软件提供者提供该识别码来获取授权码。联系方式：QQ:{1}。",
     btnCopyUuid: "复制识别码",
     btnRegister: "认证",
     btnExit: "退出",
     registerSuccess: "授权成功，有效期至{0}。",
     registerSuccessTitle: "提示",
+
+    // renewed
+    renewedDialogTitle: "续期",
+    renewedDialogContent: "当前的使用期限至{0}，如果您想延期，请向软件提供者提供手机识别码来获取授权码。您的手机识别码为：{1}，联系方式：QQ:{2}。",
 
     // about
     aboutDialogTitle: "关于",

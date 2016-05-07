@@ -1,0 +1,17 @@
+<div data-role="popup" id="renewed-popup" data-overlay-theme="b">
+    <div data-role="header">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+        <h1 id="renewed-title">续期</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <p id="renewed-content" style="word-break:break-all;">您的手机识别码为：{0}，请向软件提供者提供该识别码来获取授权码。</p>
+        <button id="renewed-btnCopyUuid">复制识别码</button>
+        <label id="renewed-licenseLabel" for="renewed-license">授权码：</label>
+        <textarea id="renewed-license" style=" resize: none"></textarea>
+    </div>
+    <div data-role="footer">
+        <div style="text-align: center">
+            <button id="renewed-btnRegister" style="display: inline-block; width:100px;">认证</button>
+        </div>
+    </div>
+</div>

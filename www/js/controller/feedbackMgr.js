@@ -19,6 +19,7 @@ pk10.feedbackMgr = function(){
     var properties = {
         initPage: function(){
             initPageText();
+            $('#suggest').val('');
             $('#btnSendSuggest').click(onSendBtnClick);
         }
     };
