@@ -1,0 +1,109 @@
+﻿<!DCOTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; chartset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>index</title>
+    <!--<link rel="stylesheet" href="../css/themes/skyd.min.css" />-->
+    <!--<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />-->
+    <!--<link rel="stylesheet" href="../css/bootstrap.min.css">-->
+    <!--cordova plugin add https://github.com/katzer/cordova-plugin-email-composer.git-->
+    <!--http://www.ithao123.cn/content-44866.html-->
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/mobiscroll.custom-2.16.1.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css"/>
+    <link rel="stylesheet" href="../css/pk10.css">
+    <script src="../js/lib/jquery-1.12.1.min.js"></script>
+    <script src="../js/lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../js/lib/mobiscroll.custom-2.16.1.min.js"></script>
+    <script src="../js/lib/swiper.min.js"></script>
+    <script src="../js/lib/json2.js"></script>
+    <script src="../js/lib/cryptico.min.js"></script>
+    <script src="../js/cordova/cordova.js"></script>
+    <script src="../js/global/config.js"></script>
+    <script src="../js/lang/msg_zh.js"></script>
+    <script src="../js/model/Log.js"></script>
+    <script src="../js/model/Setting.js"></script>
+    <script src="../js/model/AwardResult.js"></script>
+    <script src="../js/model/TimeSpan.js"></script>
+    <script src="../js/model/LincenseCheckResult.js"></script>
+    <script src="../js/model/TimedTask.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/common/Dictionary.js"></script>
+    <script src="../js/common/Guid.js"></script>
+    <script src="../js/common/fileHelper.js"></script>
+    <script src="../js/common/logger.js"></script>
+    <script src="../js/common/maskUtil.js"></script>
+    <script src="../js/common/dialogUtil.js"></script>
+    <script src="../js/dal/dbHelper.js"></script>
+    <script src="../js/dal/settingDal.js"></script>
+    <script src="../js/services/settingService.js"></script>
+    <script src="../js/services/awardDataService.js"></script>
+    <script src="../js/services/awardTableService.js"></script>
+    <script src="../js/services/homeService.js"></script>
+    <script src="../js/services/licenseService.js"></script>
+    <script src="../js/services/timedTaskService.js"></script>
+    <script src="../js/controller/indexMgr.js"></script>
+    <script src="../js/controller/homeMgr.js"></script>
+    <script src="../js/controller/historyMgr.js"></script>
+    <script src="../js/controller/settingMgr.js"></script>
+    <script src="../js/controller/licenseMgr.js"></script>
+    <script src="../js/controller/aboutMgr.js"></script>
+    <script src="../js/controller/feedbackMgr.js"></script>
+    <script type="text/javascript">
+        window.onload = pk10.indexMgr.initPage;
+    </script>
+</head>
+
+<body>
+    <div id="indexPage" data-role="page" data-theme="a">
+        <!-- 功能面板 -->
+        <div data-role="panel" id="toolbar">
+            <h2>更多...</h2>
+            <ul data-role="listview" style="padding-right: 5px">
+                <li><a id="toolBtnRenewed" href="#">续期</a></li>
+                <li><a id="toolBtnFeedback" href="#feedbackPage" data-transition="slide">反馈</a></li>
+                <li><a id="toolBtnAbout" href="#">关于</a></li>
+                <li><a id="toolBtnExit" href="#">退出</a></li>
+            </ul>
+        </div>
+        <!-- 页面标题 -->
+        <div id="titleHistory" data-role="header" data-position="fixed" data-tap-toggle="false" style="display: none">
+            <h1><span id="historyTitle">历史</span></h1>
+        </div>
+        <div id="titleHome" data-role="header" data-position="fixed" data-tap-toggle="false">
+            <a id="btnTool" href="#toolbar" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-shadow"></a>
+            <h1><span id="homeTitle">今日开奖结果</span></h1>
+            <a id="btnRefresh" class="ui-btn-right ui-btn ui-icon-recycle ui-btn-icon-notext ui-corner-all ui-shadow"></a>
+        </div>
+        <div id="titleSetting" data-role="header" data-position="fixed" data-tap-toggle="false" style="display: none">
+            <a id="btnClear" href="#" class="ui-btn-left ui-btn ui-icon-delete ui-btn-icon-left" style="display: none">清空</a>
+            <h1><span id="settingTitle">设置</span></h1>
+            <a id="btnComplete" href="#" class="ui-btn-right ui-btn ui-icon-check ui-btn-icon-left">完成</a>
+            <a id="btnReset" href="#" class="ui-btn-right ui-btn ui-icon-gear ui-btn-icon-left" style="display: none">重置</a>
+        </div>
+        <!-- 页面内容 -->
+        <div data-role="main" class="ui-content" style="padding: 0px">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="overflow-y:auto"><div id="historyPage" style="padding: 10px;"></div></div>
+                    <div class="swiper-slide" style="overflow-y:auto"><div id="homePage" style="padding: 10px;"></div></div>
+                    <div class="swiper-slide" style="overflow-y:auto"><div id="settingPage" style="padding: 10px;"></div></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- 底部菜单栏 -->
+        <div data-role="footer" data-position="fixed">
+            <div id="navbar" data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a id="btnHistory" href="#" data-icon="search">历史</a></li>
+                    <li><a id="btnHome" href="#" data-icon="home" class="ui-btn-active">首页</a></li>
+                    <li><a id="btnSetting" href="#" data-icon="gear">设置</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

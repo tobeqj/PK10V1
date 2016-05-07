@@ -1,0 +1,51 @@
+﻿<!-- 最新开奖信息折叠面板 -->
+<div data-role="collapsible" data-collapsed="false">
+    <h1><span id="currentAwardDataTitle">最新开奖数据：</span><span id="currentPeriodNumber" class="periodNumber">第期</span></h1>
+    <ul id="currentAwardNumbers" class="lot-nums">
+        <li name="position1" class="none"></li>
+        <li name="position2" class="none"></li>
+        <li name="position3" class="none"></li>
+        <li name="position4" class="none"></li>
+        <li name="position5" class="none"></li>
+        <li name="position6" class="none"></li>
+        <li name="position7" class="none"></li>
+        <li name="position8" class="none"></li>
+        <li name="position9" class="none"></li>
+        <li name="position10" class="none"></li>
+    </ul>
+    <span id="waittingMsg" style="color:green; display: none">等待开奖结果......</span>
+    <p>
+        <span id="nextAwardTimeSpan">离下期开奖时间还剩：</span>
+        <span id="days" style="display: none"></span>
+        <span id="hours">00</span>:
+        <span id="minutes">00</span>:
+        <span id="seconds">00</span>
+    </p>
+</div>
+
+<!-- 开奖结果表格 -->
+<table id="tbTodayResult" class="awardTable">
+    <thead>
+        <tr>
+            <th id="thPeriodNumber" style="width: 20%" rowspan="2">期号</th>
+            <th id="thNumber" style="width: 10%" rowspan="2">号码</th>
+            <th id="thPosition" style="width: 20%" rowspan="2">位置</th>
+            <th id="thResult" style="width: 40%" colspan="4">开奖结果</th>
+            <th id="thDetails" style="width: 10%" rowspan="2">详情</th>
+        </tr>
+        <tr>
+            <th id="thDanshuang" style="width: 10%">单双</th>
+            <th id="thRight1" style="width: 10%">命中</th>
+            <th id="thDaxiao" style="width: 10%">大小</th>
+            <th id="thRight2" style="width: 10%">命中</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<!-- 点击表格详情列的按钮时弹出的窗体 -->
+<div data-role="popup" id="detailsPopup" class="ui-content">
+</div>
+
+

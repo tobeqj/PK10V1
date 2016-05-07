@@ -100,7 +100,7 @@ pk10.indexMgr = function(){
 
     var initToolbar = function(){
         $('#toolBtnAbout').click(pk10.aboutMgr.openDialog);
-        $('#toolBtnRenewed').click(pk10.licenseMgr.openRegisterDialog);
+        $('#toolBtnRenewed').click(pk10.licenseMgr.openRenewedDialog);
         $('#toolBtnExit').click(navigator.app.exitApp);
         $.get('feedback.html', function(html){
             $(html).appendTo('body');
