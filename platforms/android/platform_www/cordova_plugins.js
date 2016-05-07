@@ -175,6 +175,14 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-email-composer/www/email_composer.js",
+        "id": "cordova-plugin-email-composer.EmailComposer",
+        "clobbers": [
+            "cordova.plugins.email",
+            "plugin.email"
+        ]
+    },
+    {
         "file": "plugins/com.saatcioglu.phonegap.ClipboardManagerPlugin/www/clipboard.js",
         "id": "com.saatcioglu.phonegap.ClipboardManagerPlugin.ClipboardManagerPlugin",
         "clobbers": [
@@ -189,6 +197,7 @@ module.exports.metadata =
     "cordova-plugin-x-toast": "2.4.2",
     "cordova-plugin-file": "4.1.1",
     "cordova-plugin-device": "1.1.2",
+    "cordova-plugin-email-composer": "0.8.3",
     "com.saatcioglu.phonegap.ClipboardManagerPlugin": "1.0"
 };
 // BOTTOM OF METADATA

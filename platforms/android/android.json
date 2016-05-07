@@ -23,6 +23,10 @@
                         {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.appplant.cordova.emailcomposer.EmailComposer\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -32,6 +36,12 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
                             "count": 1
                         }
                     ]
@@ -60,6 +70,9 @@
             "PACKAGE_NAME": "com.felix.pk10"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.felix.pk10"
+        },
+        "cordova-plugin-email-composer": {
             "PACKAGE_NAME": "com.felix.pk10"
         },
         "com.saatcioglu.phonegap.ClipboardManagerPlugin": {
@@ -243,6 +256,14 @@
             ]
         },
         {
+            "file": "plugins/cordova-plugin-email-composer/www/email_composer.js",
+            "id": "cordova-plugin-email-composer.EmailComposer",
+            "clobbers": [
+                "cordova.plugins.email",
+                "plugin.email"
+            ]
+        },
+        {
             "file": "plugins/com.saatcioglu.phonegap.ClipboardManagerPlugin/www/clipboard.js",
             "id": "com.saatcioglu.phonegap.ClipboardManagerPlugin.ClipboardManagerPlugin",
             "clobbers": [
@@ -255,6 +276,7 @@
         "cordova-plugin-x-toast": "2.4.2",
         "cordova-plugin-file": "4.1.1",
         "cordova-plugin-device": "1.1.2",
+        "cordova-plugin-email-composer": "0.8.3",
         "com.saatcioglu.phonegap.ClipboardManagerPlugin": "1.0"
     }
 }

@@ -15,6 +15,9 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
+    <feature name="EmailComposer">
+        <param name="android-package" value="de.appplant.cordova.emailcomposer.EmailComposer" />
+    </feature>
     <feature name="ClipboardManagerPlugin">
         <param name="android-package" value="com.saatcioglu.phonegap.ClipboardManagerPlugin.ClipboardManagerPlugin" />
     </feature>

@@ -19,8 +19,11 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.felix.pk10"
         },
-        "cordova-plugin-clipboardManager":{
+        "cordova-plugin-clipboardManager": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-email-composer": {
+            "PACKAGE_NAME": "com.felix.pk10"
         }
     },
     "dependent_plugins": {}

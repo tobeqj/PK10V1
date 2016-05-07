@@ -31,10 +31,19 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-clipboardManager":{
+    "cordova-plugin-clipboardManager": {
         "source": {
             "type": "registry",
             "id": "com.saatcioglu.phonegap.ClipboardManagerPlugin"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-email-composer": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/katzer/cordova-plugin-email-composer.git",
+            "subdir": "."
         },
         "is_top_level": true,
         "variables": {}

@@ -12,8 +12,15 @@ pk10.feedbackMgr = function(){
 
     var onSendBtnClick = function(){
         var suggest = $('#suggest').val();
-        var sendTo = config.email;
-        // TODO:发送邮件
+        cordova.plugins.email.addAlias('gmail', 'com.google.android.gm');
+        cordova.plugins.email.open({
+            app: "gmail",
+            to: config.email,
+            subject: "PK10助手反馈",
+            body: suggest
+        }, function(){
+            debugger;
+        });
     };
 
     var properties = {
