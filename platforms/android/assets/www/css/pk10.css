@@ -1,3 +1,16 @@
+.header{
+    background-color: #3388cc;
+}
+
+.header span{
+    color: white;
+    text-shadow: 0 0px;
+}
+
+.header a{
+    border-radius: 5px;
+}
+
 .awardTable{ width: 100%; border: 1px solid lightgray; border-collapse: collapse; }
 .awardTable th, .awardTable td{ padding: 3px; border: 1px solid lightgray; }
 

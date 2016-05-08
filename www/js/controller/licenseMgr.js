@@ -5,24 +5,6 @@ var pk10 = pk10 || {};
 pk10.licenseMgr = function(){
     var _exirationDate;
 
-    // 过期检测
-    timedTaskService.addTask(function(){
-        if(_exirationDate){
-            var isPopupVisiable = $('#register-popup').length || !$('#register-popup').is(':hidden');
-            if(!isPopupVisiable && new Date().getTime() >= _exirationDate.getTime()){
-                window.plugins.toast.showShortCenter(pk10.msgs.licenseIsExpired);
-                registerDialogHelper.openDialog();
-            }
-        } else {
-            var license = localStorage.license;
-            if(!license) return;
-            var checkResult = licenseService.checkLicense(license);
-            if(checkResult.exirationDate){
-                updateExirationDate(checkResult.exirationDate);
-            }
-        }
-    });
-
     var updateExirationDate = function(exirationDate){
         _exirationDate = exirationDate;
         config.exirationDate = exirationDate;
@@ -40,9 +22,9 @@ pk10.licenseMgr = function(){
         );
     };
 
-    var registerDialogHelper = function(){
-
+    var registerDialog = function(){
         var _onRegisterSuccess;
+        var _isOpenning = false;
 
         var registerSuccess = function(exirationDate){
             var license = $('#license').val();
@@ -93,17 +75,24 @@ pk10.licenseMgr = function(){
             dialogUtil.getDialog('register-popup', 'register.html', function($popup){
                 initDialog();
                 $popup.popup('open');
+                _isOpenning = true;
+            }, function(){
+                _isOpenning = false;
             });
         };
 
         return {
-            openDialog: openDialog
+            openDialog: openDialog,
+            get isOpenning(){
+                return _isOpenning;
+            }
         };
     }();
 
-    var renewedDialogHelper = function(){
-
+    var renewedDialog = function(){
         var _onRegisterSuccess;
+        var _isOpenning;
+        var _showExitBtn;
 
         var registerSuccess = function(exirationDate){
             var license = $('#renewed-license').val();
@@ -145,20 +134,54 @@ pk10.licenseMgr = function(){
             $('#renewed-license').val('');
             $('#renewed-btnCopyUuid').click(onCopyUuidBtnClick);
             $('#renewed-btnRegister').click(onRegisterBtnClick);
+            $('#renewed-btnQuit').click(navigator.app.exitApp);
+            if(_showExitBtn){
+                $('#renewed-btnQuit').show();
+            } else{
+                $('#renewed-btnQuit').hide();
+            }
         };
 
-        var openDialog = function(success){
+        var openDialog = function(showExitBtn, success){
+            if(showExitBtn && typeof showExitBtn == 'boolean'){
+                _showExitBtn = showExitBtn;
+            } else {
+                _showExitBtn = false;
+            }
             _onRegisterSuccess = success;
             dialogUtil.getDialog('renewed-popup', 'renewed.html', function($popup){
                 initDialog();
                 $popup.popup('open');
+                _isOpenning = true;
+            }, function(){
+                _isOpenning = false;
             });
         };
 
         return {
-            openDialog: openDialog
+            openDialog: openDialog,
+            get isOpenning(){
+                return _isOpenning;
+            }
         };
     }();
+
+    // 过期检测
+    timedTaskService.addTask(function(){
+        if(_exirationDate){
+            if(!registerDialog.isOpenning && !renewedDialog.isOpenning && new Date().getTime() >= _exirationDate.getTime()){
+                window.plugins.toast.showShortCenter(pk10.msgs.licenseIsExpired);
+                renewedDialog.openDialog(true);
+            }
+        } else {
+            var license = localStorage.license;
+            if(!license) return;
+            var checkResult = licenseService.checkLicense(license);
+            if(checkResult.exirationDate){
+                updateExirationDate(checkResult.exirationDate);
+            }
+        }
+    });
 
     var properties = {
         /*
@@ -166,8 +189,8 @@ pk10.licenseMgr = function(){
         @params
         @return
          */
-        openRegisterDialog: registerDialogHelper.openDialog,
-        openRenewedDialog: renewedDialogHelper.openDialog
+        openRegisterDialog: registerDialog.openDialog,
+        openRenewedDialog: renewedDialog.openDialog
     };
 
     return properties;

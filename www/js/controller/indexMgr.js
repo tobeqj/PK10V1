@@ -8,9 +8,21 @@ pk10.indexMgr = function(){
 
     var onDeviceReady = function() {
         var license = localStorage.license;
-        if(license && licenseService.checkLicense(license).isValid){
-            initPage();
-        } else{
+        if(license){
+            var checkResult = licenseService.checkLicense(license);
+            if(checkResult.isValid){
+                initPage();
+            } else if(checkResult.exirationDate){
+                window.plugins.toast.showShortCenter(pk10.msgs.licenseIsExpired);
+                pk10.licenseMgr.openRenewedDialog(true, function(){
+                    initPage();
+                });
+            } else {
+                pk10.licenseMgr.openRegisterDialog(function(){
+                    initPage();
+                });
+            }
+        }  else{
             pk10.licenseMgr.openRegisterDialog(function(){
                 initPage();
             });
@@ -206,6 +218,7 @@ pk10.indexMgr = function(){
 
     var properties = {
         initPage: function(){
+            $('.header').css('background-color', '#3388CC');
             document.addEventListener("deviceready", onDeviceReady);
             document.addEventListener("backbutton", onBackBtnDown);
         },

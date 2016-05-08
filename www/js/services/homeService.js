@@ -60,31 +60,6 @@
         updateCurrentAwardInfo(data);
     };
 
-    var startTimedTask = function () {
-        clearTimedTask();
-        _timer = setInterval(function () {
-            if(!_isTableInited) return;
-            var currentTime = new Date();
-            if (currentTime.getTime() > _nextAwardTime.getTime()) {
-                showWaittingAwardResultMsg();
-                awardDataService.getCurrentAwardResult(function (data) {
-                    if (data.current.periodNumber > _currentPeriodNumber) {
-                        _currentPeriodNumber = data.current.periodNumber;
-                        _nextAwardTime = data.next.awardTime;
-                        onAwardDataUpdate(data);
-                    }
-                });
-            } else{
-                hideWaittingAwardResultMsg();
-                updateNextTimeInfo();
-            }
-        }, 1000);
-    };
-
-    var clearTimedTask = function(){
-        if (_timer) clearInterval(_timer);
-    };
-
     var startTimedUpdateTableTask = function(){
         if(_taskId1) timedTaskService.removeTask(_taskId1);
         _taskId1 = timedTaskService.addTask(function(){
@@ -119,12 +94,17 @@
         initTable: function(success, error){
             _isTableInited = false;
             _tableService.initTable(new Date, $('#tbTodayResult'), function(currentAwardResult){
-                _currentPeriodNumber = currentAwardResult.periodNumber;
+                if(currentAwardResult && currentAwardResult.periodNumber){
+                    _currentPeriodNumber = currentAwardResult.periodNumber;
+                }
                 //获取最新一期的开奖数据
                 awardDataService.getCurrentAwardResult(function (data) {
                     if (data.current.periodNumber > _currentPeriodNumber) {
                         _currentPeriodNumber = data.current.periodNumber;
-                        insertNewAwardResultToTable(data.current);
+                        var today = new Date().format('yyyy-MM-dd');
+                        if(data.current.awardTime.format('yyyy-MM-dd') === today){
+                            insertNewAwardResultToTable(data.current);
+                        }
                     }
                     _nextAwardTime = data.next.awardTime;
                     _isTableInited = true;
