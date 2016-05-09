@@ -8,10 +8,7 @@ pk10.historyMgr = function(){
     var onSearch = function(){
         maskUtil.showMask();
         var date = new Date($('#date').val());
-        tableService.initTable(date, $('#tbHistoryResult'), maskUtil.hideMask, function(){
-            window.plugins.toast.showShortCenter(pk10.msgs.searchFailed);
-            maskUtil.hideMask();
-        });
+        tableService.initTable(date, $('#tbHistoryResult'), maskUtil.hideMask, maskUtil.hideMask);
     };
 
     var initPageText = function(){
