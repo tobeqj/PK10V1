@@ -8,10 +8,7 @@ pk10.historyMgr = function(){
     var onSearch = function(){
         maskUtil.showMask();
         var date = new Date($('#date').val());
-        tableService.initTable(date, $('#tbHistoryResult'), maskUtil.hideMask, function(){
-            window.plugins.toast.showShortCenter(pk10.msgs.searchFailed);
-            maskUtil.hideMask();
-        });
+        tableService.initTable(date, $('#tbHistoryResult'), maskUtil.hideMask, maskUtil.hideMask);
     };
 
     var initPageText = function(){
@@ -32,10 +29,12 @@ pk10.historyMgr = function(){
             theme: "wp-light",
             mode: "scroller",
             display: "modal",
-            lang: "zh"
+            lang: "zh",
+            dateFormat: "yyyy-mm-dd",
+            endYear: "2050"
         });
         var defaultDate = new Date().addDays(-1);
-        $("#date").val(defaultDate.format("yyyy/MM/dd"));
+        $("#date").val(defaultDate.format("yyyy-MM-dd"));
     };
 
     var properties = {

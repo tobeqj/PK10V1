@@ -222,6 +222,41 @@ var awardTableService = function(){
             return $trs;
         };
 
+        var initTable = function(date, $table, success, error) {
+            _date = date;
+            settingService.getLastSetting(function (setting) {
+                $tbody = $table.find('tbody');
+                $tbody.empty();
+                if (!setting || !setting.settings) {
+                    var $tr = $('<tr></tr>');
+                    var $td = $('<td colspan="8"></td>');
+                    $td.text(pk10.msgs.noSetting);
+                    $tr.append($td);
+                    $tbody.append($tr);
+                    if(error) error();
+                    return;
+                }
+                _cycle = setting.cycle;
+                _settings = setting.settings;
+                getTableData(function(tbData){
+                    var $trs = createTableRows(tbData);
+                    if ($trs.length) {
+                        $tbody.append($trs);
+                    } else {
+                        var $tr = $('<tr></tr>');
+                        var $td = $('<td colspan="8"></td>');
+                        $td.text(pk10.msgs.noAwardRecord);
+                        $tr.append($td);
+                        $tbody.append($tr);
+                    }
+                    if(success) success(_currentAwardResult);
+                }, error);
+            }, function(err){
+                window.plugin.toast.showShortCenter(pk10.msgs.getSettingFailed);
+                if(error) error(err);
+            });
+        };
+
         var properties = {
             /*
              @function 获取表格数据
@@ -229,38 +264,7 @@ var awardTableService = function(){
              @return
              */
             initTable: function(date, $table, success, error) {
-                _date = date;
-                settingService.getLastSetting(function (setting) {
-                    $tbody = $table.find('tbody');
-                    $tbody.empty();
-                    if (!setting || !setting.settings) {
-                        var $tr = $('<tr></tr>');
-                        var $td = $('<td colspan="8"></td>');
-                        $td.text(pk10.msgs.noSetting);
-                        $tr.append($td);
-                        $tbody.append($tr);
-                        if(error) error();
-                        return;
-                    }
-                    _cycle = setting.cycle;
-                    _settings = setting.settings;
-                    getTableData(function(tbData){
-                        var $trs = createTableRows(tbData);
-                        if ($trs.length) {
-                            $tbody.append($trs);
-                        } else {
-                            var $tr = $('<tr></tr>');
-                            var $td = $('<td colspan="8"></td>');
-                            $td.text(pk10.msgs.noAwardRecord);
-                            $tr.append($td);
-                            $tbody.append($tr);
-                        }
-                        if(success) success(_currentAwardResult);
-                    }, error);
-                }, function(err){
-                    window.plugin.toast.showShortCenter(pk10.msgs.getSettingFailed);
-                    if(error) error(err);
-                });
+                initTable(date, $table, success, error);
             },
             /*
              @function 创建表格行

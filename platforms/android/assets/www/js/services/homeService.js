@@ -1,15 +1,17 @@
 ﻿var homeService = function() {
+    var _lastPeriodNumberInTable = 0;
     var _currentPeriodNumber = 0;
     var _nextAwardTime = new Date;
     var _isTableInited = false;
     var _tableService = awardTableService.newInstance;
-    var _timer;
     var _taskId1;
-    var _taskId2;
 
     var insertNewAwardResultToTable = function(awardResult) {
-        var $tr = _tableService.createTableRow(awardResult);
-        $('#tbTodayResult tbody').prepend($tr);
+        if(_lastPeriodNumberInTable < awardResult.periodNumber){
+            _lastPeriodNumberInTable = awardResult.periodNumber;
+            var $tr = _tableService.createTableRow(awardResult);
+            $('#tbTodayResult tbody').prepend($tr);
+        }
     };
 
     var updateCurrentAwardInfo = function(data){
@@ -56,14 +58,14 @@
     };
 
     var onAwardDataUpdate = function(data){
-        insertNewAwardResultToTable(data.current);
         updateCurrentAwardInfo(data);
+        insertNewAwardResultToTable(data.current);
     };
 
-    var startTimedUpdateTableTask = function(){
+    var startTimedUpdateTask = function(){
         if(_taskId1) timedTaskService.removeTask(_taskId1);
         _taskId1 = timedTaskService.addTask(function(){
-            if(!_isTableInited) return;
+            //if(!_isTableInited) return;
             var currentTime = new Date();
             if (currentTime.getTime() > _nextAwardTime.getTime()) {
                 showWaittingAwardResultMsg();
@@ -76,44 +78,40 @@
                 });
             } else{
                 hideWaittingAwardResultMsg();
-            }
-        });
-    };
-
-    var startTimedUpdateNextTimeInfoTask = function(){
-        if(_taskId2) timedTaskService.removeTask(_taskId2);
-        _taskId2 = timedTaskService.addTask(function(){
-            var currentTime = new Date();
-            if (currentTime.getTime() < _nextAwardTime.getTime()){
                 updateNextTimeInfo();
             }
         });
     };
-    
+
+    var initTabel = function(success, error){
+        _isTableInited = false;
+        _tableService.initTable(new Date, $('#tbTodayResult'), function(currentAwardResult){
+            if(currentAwardResult && currentAwardResult.periodNumber){
+                _currentPeriodNumber = currentAwardResult.periodNumber;
+                _lastPeriodNumberInTable = currentAwardResult.periodNumber;
+            }
+            //获取最新一期的开奖数据
+            awardDataService.getCurrentAwardResult(function (data) {
+                if (data.current.periodNumber > _currentPeriodNumber) {
+                    _currentPeriodNumber = data.current.periodNumber;
+                    var today = new Date().format('yyyy-MM-dd');
+                    if(data.current.awardTime.format('yyyy-MM-dd') === today){
+                        insertNewAwardResultToTable(data.current);
+                    }
+                }
+                _nextAwardTime = data.next.awardTime;
+                _isTableInited = true;
+                if (success) success();
+            }, function (err) {
+                window.plugins.toast.showLongCenter(pk10.msgs.getCurrentAwardDataFailed);
+                if(error) error(err);
+            });
+        }, error);
+    };
+
     var properties = {
         initTable: function(success, error){
-            _isTableInited = false;
-            _tableService.initTable(new Date, $('#tbTodayResult'), function(currentAwardResult){
-                if(currentAwardResult && currentAwardResult.periodNumber){
-                    _currentPeriodNumber = currentAwardResult.periodNumber;
-                }
-                //获取最新一期的开奖数据
-                awardDataService.getCurrentAwardResult(function (data) {
-                    if (data.current.periodNumber > _currentPeriodNumber) {
-                        _currentPeriodNumber = data.current.periodNumber;
-                        var today = new Date().format('yyyy-MM-dd');
-                        if(data.current.awardTime.format('yyyy-MM-dd') === today){
-                            insertNewAwardResultToTable(data.current);
-                        }
-                    }
-                    _nextAwardTime = data.next.awardTime;
-                    _isTableInited = true;
-                    if (success) success();
-                }, function (err) {
-                    window.plugins.toast.showLongCenter(pk10.msgs.getCurrentAwardDataFailed);
-                    if(error) error(err);
-                });
-            }, error);
+            initTabel(success, error);
         },
         initCurrentAwardInfo: function(){
             awardDataService.getCurrentAwardResult(function (data) {
@@ -122,11 +120,7 @@
                 updateCurrentAwardInfo(data);
             });
         },
-        strartTimedUpdateData: function(){
-            //startTimedTask();
-            startTimedUpdateTableTask();
-            startTimedUpdateNextTimeInfoTask();
-        }
+        startTimedUpdateData: startTimedUpdateTask
     };
 
     return properties;

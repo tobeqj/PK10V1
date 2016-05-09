@@ -8,18 +8,29 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/pk10.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/pk10.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/html/index.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/indexMgr.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/indexMgr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/pk10.css" afterPath="$PROJECT_DIR$/www/css/pk10.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/html/index.html" afterPath="$PROJECT_DIR$/www/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/html/renewed.html" afterPath="$PROJECT_DIR$/www/html/renewed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/indexMgr.js" afterPath="$PROJECT_DIR$/www/js/controller/indexMgr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/indexMgr.min.js" afterPath="$PROJECT_DIR$/www/js/controller/indexMgr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/historyMgr.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/historyMgr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/historyMgr.min.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/historyMgr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/homeMgr.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/homeMgr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/homeMgr.min.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/homeMgr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/licenseMgr.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controller/licenseMgr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/lang/msg_zh.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/lang/msg_zh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/services/awardTableService.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services/awardTableService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/services/awardTableService.min.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services/awardTableService.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/services/homeService.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services/homeService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/services/homeService.min.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services/homeService.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/services/licenseService.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services/licenseService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/historyMgr.min.js" afterPath="$PROJECT_DIR$/www/js/controller/historyMgr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/homeMgr.js" afterPath="$PROJECT_DIR$/www/js/controller/homeMgr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/homeMgr.min.js" afterPath="$PROJECT_DIR$/www/js/controller/homeMgr.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/licenseMgr.js" afterPath="$PROJECT_DIR$/www/js/controller/licenseMgr.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/licenseMgr.min.js" afterPath="$PROJECT_DIR$/www/js/controller/licenseMgr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/lang/msg_zh.js" afterPath="$PROJECT_DIR$/www/js/lang/msg_zh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/awardTableService.js" afterPath="$PROJECT_DIR$/www/js/services/awardTableService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/awardTableService.min.js" afterPath="$PROJECT_DIR$/www/js/services/awardTableService.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/homeService.js" afterPath="$PROJECT_DIR$/www/js/services/homeService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/homeService.min.js" afterPath="$PROJECT_DIR$/www/js/services/homeService.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/licenseService.js" afterPath="$PROJECT_DIR$/www/js/services/licenseService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/licenseService.min.js" afterPath="$PROJECT_DIR$/www/js/services/licenseService.min.js" />
     </list>
     <list id="4a0ecc57-5372-477e-a233-d272028900a7" name="Ignore" comment="" />
     <ignored path="PK10V1.iws" />
@@ -44,15 +55,13 @@
       <file leaf-file-name="indexMgr.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controller/indexMgr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="229" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+            <state vertical-scroll-proportion="-19.566668">
+              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
                 <element signature="e#945#1469#0" expanded="false" />
                 <element signature="e#1238#1455#0" expanded="false" />
-                <element signature="e#1501#1653#0" expanded="false" />
                 <element signature="e#1689#2182#0" expanded="false" />
-                <element signature="e#2223#2529#0" expanded="false" />
                 <element signature="e#2564#3159#0" expanded="false" />
                 <element signature="e#2638#3151#0" expanded="false" />
                 <element signature="e#2785#2938#0" expanded="false" />
@@ -85,8 +94,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5012854">
-              <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.36821705">
+              <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -102,50 +111,19 @@
       <file leaf-file-name="licenseMgr.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="185" column="22" selection-start-line="185" selection-start-column="22" selection-end-line="185" selection-end-column="22" />
+            <state vertical-scroll-proportion="-11.633333">
+              <caret line="202" column="4" selection-start-line="3" selection-start-column="0" selection-end-line="202" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homeService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/services/homeService.js">
+      <file leaf-file-name="licenseMgr.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.min.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="132" selection-end-column="4" />
-              <folding>
-                <element signature="e#29#5207#0" expanded="false" />
-                <element signature="e#300#416#0" expanded="false" />
-                <element signature="e#466#796#0" expanded="false" />
-                <element signature="e#626#683#0" expanded="false" />
-                <element signature="e#838#1626#0" expanded="false" />
-                <element signature="e#1365#1457#0" expanded="false" />
-                <element signature="e#1462#1504#0" expanded="false" />
-                <element signature="e#1676#1963#0" expanded="false" />
-                <element signature="e#2013#2096#0" expanded="false" />
-                <element signature="e#2141#2237#0" expanded="false" />
-                <element signature="e#2286#3073#0" expanded="false" />
-                <element signature="e#2402#3065#0" expanded="false" />
-                <element signature="e#2552#2989#0" expanded="false" />
-                <element signature="e#2671#2973#0" expanded="false" />
-                <element signature="e#2747#2955#0" expanded="false" />
-                <element signature="e#2994#3055#0" expanded="false" />
-                <element signature="e#3129#3425#0" expanded="false" />
-                <element signature="e#3245#3417#0" expanded="false" />
-                <element signature="e#3354#3407#0" expanded="false" />
-                <element signature="e#3453#5180#0" expanded="false" />
-                <element signature="e#3498#4695#0" expanded="false" />
-                <element signature="e#3631#4676#0" expanded="false" />
-                <element signature="e#3706#3801#0" expanded="false" />
-                <element signature="e#3903#4488#0" expanded="false" />
-                <element signature="e#3979#4325#0" expanded="false" />
-                <element signature="e#4205#4303#0" expanded="false" />
-                <element signature="e#4505#4660#0" expanded="false" />
-                <element signature="e#4737#4999#0" expanded="false" />
-                <element signature="e#4806#4987#0" expanded="false" />
-                <element signature="e#5042#5174#0" expanded="false" />
-              </folding>
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -176,18 +154,15 @@
         <option value="$PROJECT_DIR$/www/js/model/LincenseInfo.js" />
         <option value="$PROJECT_DIR$/www/js/common/licenseHelper.js" />
         <option value="$PROJECT_DIR$/www/js/common/licenseService.js" />
-        <option value="$PROJECT_DIR$/www/js/services/licenseService.js" />
         <option value="$PROJECT_DIR$/www/js/lang/msgs_zh.js" />
         <option value="$PROJECT_DIR$/www/html/setting.html" />
         <option value="$PROJECT_DIR$/www/js/controller/settingMgr.js" />
         <option value="$PROJECT_DIR$/www/html/home.html" />
-        <option value="$PROJECT_DIR$/www/js/controller/homeMgr.js" />
         <option value="$PROJECT_DIR$/www/html/history.html" />
         <option value="$PROJECT_DIR$/www/js/global/config.json" />
         <option value="$PROJECT_DIR$/www/js/common/config.js" />
         <option value="$PROJECT_DIR$/www/html/licensePopup.html" />
         <option value="$PROJECT_DIR$/www/js/global/config.js" />
-        <option value="$PROJECT_DIR$/www/js/services/awardTableService.js" />
         <option value="$PROJECT_DIR$/www/js/controller/historyMgr.js" />
         <option value="$PROJECT_DIR$/www/js/common/MaskUtil.js" />
         <option value="$PROJECT_DIR$/www/js/common/alertUtil.js" />
@@ -203,26 +178,29 @@
         <option value="$PROJECT_DIR$/www/html/feedback.html" />
         <option value="$PROJECT_DIR$/www/js/services/awardDataService.js" />
         <option value="$PROJECT_DIR$/www/js/controller/aboutMgr.js" />
-        <option value="$PROJECT_DIR$/www/js/lang/msg_zh.js" />
         <option value="$PROJECT_DIR$/www/js/cordova/cordova_plugins.js" />
         <option value="$PROJECT_DIR$/www/js/controller/feedbackMgr.js" />
         <option value="$PROJECT_DIR$/www/js/controller/settingMgr.min.js" />
-        <option value="$PROJECT_DIR$/www/js/controller/homeMgr.min.js" />
-        <option value="$PROJECT_DIR$/www/js/controller/historyMgr.min.js" />
         <option value="$PROJECT_DIR$/www/js/controller/aboutMgr.min.js" />
         <option value="$PROJECT_DIR$/www/js/services/awardDataService.min.js" />
-        <option value="$PROJECT_DIR$/www/js/services/awardTableService.min.js" />
-        <option value="$PROJECT_DIR$/www/js/services/licenseService.min.js" />
         <option value="$PROJECT_DIR$/www/js/services/settingService.min.js" />
         <option value="$PROJECT_DIR$/www/js/services/timedTaskService.min.js" />
         <option value="$PROJECT_DIR$/www/css/pk10.css" />
         <option value="$PROJECT_DIR$/www/html/renewed.html" />
-        <option value="$PROJECT_DIR$/www/js/services/homeService.js" />
-        <option value="$PROJECT_DIR$/www/js/services/homeService.min.js" />
-        <option value="$PROJECT_DIR$/www/js/controller/licenseMgr.js" />
-        <option value="$PROJECT_DIR$/www/js/controller/licenseMgr.min.js" />
         <option value="$PROJECT_DIR$/www/js/controller/indexMgr.js" />
         <option value="$PROJECT_DIR$/www/js/controller/indexMgr.min.js" />
+        <option value="$PROJECT_DIR$/www/js/services/licenseService.js" />
+        <option value="$PROJECT_DIR$/www/js/services/awardTableService.js" />
+        <option value="$PROJECT_DIR$/www/js/services/homeService.js" />
+        <option value="$PROJECT_DIR$/www/js/controller/homeMgr.js" />
+        <option value="$PROJECT_DIR$/www/js/lang/msg_zh.js" />
+        <option value="$PROJECT_DIR$/www/js/services/awardTableService.min.js" />
+        <option value="$PROJECT_DIR$/www/js/services/homeService.min.js" />
+        <option value="$PROJECT_DIR$/www/js/services/licenseService.min.js" />
+        <option value="$PROJECT_DIR$/www/js/controller/homeMgr.min.js" />
+        <option value="$PROJECT_DIR$/www/js/controller/historyMgr.min.js" />
+        <option value="$PROJECT_DIR$/www/js/controller/licenseMgr.js" />
+        <option value="$PROJECT_DIR$/www/js/controller/licenseMgr.min.js" />
         <option value="$PROJECT_DIR$/www/html/index.html" />
       </list>
     </option>
@@ -269,6 +247,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -319,6 +298,50 @@
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PK10V1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PK10V1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PK10V1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PK10V1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -342,13 +365,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PK10V1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PK10V1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/Pk10License" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -643,16 +683,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16692668" sideWeight="0.48726115" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2324493" sideWeight="0.48726115" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51687115" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="版本控制" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.516129" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31748468" sideWeight="0.5031201" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960998" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32440946" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31490016" sideWeight="0.49687988" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32411674" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31490016" sideWeight="0.49687988" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21918876" sideWeight="0.5127388" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -704,7 +744,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="25" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -721,7 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -731,12 +770,9 @@
           <caret line="107" column="11" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
-            <element signature="e#235#781#0" expanded="false" />
-            <element signature="e#846#889#0" expanded="false" />
             <element signature="e#945#1469#0" expanded="false" />
             <element signature="e#1238#1455#0" expanded="false" />
             <element signature="e#1689#2182#0" expanded="false" />
-            <element signature="e#2223#2529#0" expanded="false" />
             <element signature="e#2564#3159#0" expanded="false" />
             <element signature="e#2638#3151#0" expanded="false" />
             <element signature="e#2785#2938#0" expanded="false" />
@@ -761,8 +797,6 @@
             <element signature="e#7047#7108#0" expanded="false" />
             <element signature="e#7114#7178#0" expanded="false" />
             <element signature="e#7236#7328#0" expanded="false" />
-            <element signature="e#7360#7633#0" expanded="false" />
-            <element signature="e#7390#7599#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -823,14 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/lang/msg_zh.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29742765">
-          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/cordova/plugins/cordova-plugin-email-composer/www/email_composer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45379537">
@@ -850,13 +876,6 @@
         <state vertical-scroll-proportion="0.046798028">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/settingMgr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1231527">
-          <caret line="24" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -883,38 +902,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/historyMgr.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.046798028">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/historyMgr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28325123">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/homeMgr.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.046798028">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services/awardDataService.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.046798028">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/awardTableService.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.046798028">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
@@ -926,14 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.70197046">
           <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/licenseService.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="1101" selection-start-line="0" selection-start-column="1101" selection-end-line="0" selection-end-column="1101" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,18 +947,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/licenseService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3275862">
-          <caret line="57" column="4" selection-start-line="3" selection-start-column="0" selection-end-line="57" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,15 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3571428">
           <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/awardTableService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,7 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.821428">
           <caret line="13" column="108" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="108" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,24 +1022,82 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.464286">
           <caret line="14" column="39" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/homeMgr.js">
+    <entry file="file://$PROJECT_DIR$/www/js/controller/indexMgr.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.1607717">
-          <caret line="14" column="27" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="3699" selection-start-line="0" selection-start-column="3699" selection-end-line="0" selection-end-column="3699" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services/homeService.min.js">
+    <entry file="file://$PROJECT_DIR$/www/js/lang/msg_zh.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04556355">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/awardTableService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="289" column="4" selection-start-line="3" selection-start-column="0" selection-end-line="289" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+            <element signature="e#556#1552#0" expanded="false" />
+            <element signature="e#654#868#0" expanded="false" />
+            <element signature="e#895#1514#0" expanded="false" />
+            <element signature="e#943#1200#0" expanded="false" />
+            <element signature="e#985#1066#0" expanded="false" />
+            <element signature="e#1072#1182#0" expanded="false" />
+            <element signature="e#1246#1384#0" expanded="false" />
+            <element signature="e#1425#1500#0" expanded="false" />
+            <element signature="e#1626#3044#0" expanded="false" />
+            <element signature="e#1823#2574#0" expanded="false" />
+            <element signature="e#1904#2392#0" expanded="false" />
+            <element signature="e#2118#2251#0" expanded="false" />
+            <element signature="e#2409#2558#0" expanded="false" />
+            <element signature="e#2730#2963#0" expanded="false" />
+            <element signature="e#2781#2908#0" expanded="false" />
+            <element signature="e#2975#3031#0" expanded="false" />
+            <element signature="e#3137#6090#0" expanded="false" />
+            <element signature="e#3374#5947#0" expanded="false" />
+            <element signature="e#3937#4589#0" expanded="false" />
+            <element signature="e#4055#4185#0" expanded="false" />
+            <element signature="e#4191#4571#0" expanded="false" />
+            <element signature="e#4463#4549#0" expanded="false" />
+            <element signature="e#4701#5332#0" expanded="false" />
+            <element signature="e#4807#4934#0" expanded="false" />
+            <element signature="e#4940#5314#0" expanded="false" />
+            <element signature="e#5206#5292#0" expanded="false" />
+            <element signature="e#5360#5893#0" expanded="false" />
+            <element signature="e#6141#6330#0" expanded="false" />
+            <element signature="e#6218#6293#0" expanded="false" />
+            <element signature="e#6380#9135#0" expanded="false" />
+            <element signature="e#6459#9098#0" expanded="false" />
+            <element signature="e#6531#6761#0" expanded="false" />
+            <element signature="e#7227#7375#0" expanded="false" />
+            <element signature="e#7471#7613#0" expanded="false" />
+            <element signature="e#7846#9052#0" expanded="false" />
+            <element signature="e#7969#8158#0" expanded="false" />
+            <element signature="e#8729#8955#0" expanded="false" />
+            <element signature="e#9967#10035#0" expanded="false" />
+            <element signature="e#10041#10320#0" expanded="false" />
+            <element signature="e#10438#10572#0" expanded="false" />
+            <element signature="e#10626#10715#0" expanded="false" />
+            <element signature="e#10864#10952#0" expanded="false" />
+            <element signature="e#11251#11332#0" expanded="false" />
+            <element signature="e#11278#11326#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/awardTableService.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
@@ -1086,69 +1106,94 @@
     <entry file="file://$PROJECT_DIR$/www/js/services/homeService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="132" selection-end-column="4" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="126" selection-end-column="4" />
           <folding>
-            <element signature="e#29#5207#0" expanded="false" />
-            <element signature="e#300#416#0" expanded="false" />
-            <element signature="e#466#796#0" expanded="false" />
-            <element signature="e#626#683#0" expanded="false" />
-            <element signature="e#838#1626#0" expanded="false" />
-            <element signature="e#1365#1457#0" expanded="false" />
-            <element signature="e#1462#1504#0" expanded="false" />
-            <element signature="e#1676#1963#0" expanded="false" />
-            <element signature="e#2013#2096#0" expanded="false" />
-            <element signature="e#2141#2237#0" expanded="false" />
-            <element signature="e#2286#3073#0" expanded="false" />
-            <element signature="e#2402#3065#0" expanded="false" />
-            <element signature="e#2552#2989#0" expanded="false" />
-            <element signature="e#2671#2973#0" expanded="false" />
-            <element signature="e#2747#2955#0" expanded="false" />
-            <element signature="e#2994#3055#0" expanded="false" />
-            <element signature="e#3129#3425#0" expanded="false" />
-            <element signature="e#3245#3417#0" expanded="false" />
-            <element signature="e#3354#3407#0" expanded="false" />
-            <element signature="e#3453#5180#0" expanded="false" />
-            <element signature="e#3498#4695#0" expanded="false" />
-            <element signature="e#3631#4676#0" expanded="false" />
-            <element signature="e#3706#3801#0" expanded="false" />
-            <element signature="e#3903#4488#0" expanded="false" />
-            <element signature="e#3979#4325#0" expanded="false" />
-            <element signature="e#4205#4303#0" expanded="false" />
-            <element signature="e#4505#4660#0" expanded="false" />
-            <element signature="e#4737#4999#0" expanded="false" />
-            <element signature="e#4806#4987#0" expanded="false" />
-            <element signature="e#5042#5174#0" expanded="false" />
+            <element signature="e#618#948#0" expanded="false" />
+            <element signature="e#778#835#0" expanded="false" />
+            <element signature="e#990#1778#0" expanded="false" />
+            <element signature="e#1517#1609#0" expanded="false" />
+            <element signature="e#1614#1656#0" expanded="false" />
+            <element signature="e#1828#2115#0" expanded="false" />
+            <element signature="e#2165#2248#0" expanded="false" />
+            <element signature="e#4318#4461#0" expanded="false" />
+            <element signature="e#4718#4899#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.min.js">
+    <entry file="file://$PROJECT_DIR$/www/js/services/homeService.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04556355">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.js">
+    <entry file="file://$PROJECT_DIR$/www/js/services/licenseService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="185" column="22" selection-start-line="185" selection-start-column="22" selection-end-line="185" selection-end-column="22" />
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="61" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services/licenseService.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controller/homeMgr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controller/homeMgr.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controller/historyMgr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="49" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controller/historyMgr.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030546624">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controller/settingMgr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.73141485">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controller/indexMgr.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="229" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+        <state vertical-scroll-proportion="-19.566668">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
             <element signature="e#945#1469#0" expanded="false" />
             <element signature="e#1238#1455#0" expanded="false" />
-            <element signature="e#1501#1653#0" expanded="false" />
             <element signature="e#1689#2182#0" expanded="false" />
-            <element signature="e#2223#2529#0" expanded="false" />
             <element signature="e#2564#3159#0" expanded="false" />
             <element signature="e#2638#3151#0" expanded="false" />
             <element signature="e#2785#2938#0" expanded="false" />
@@ -1177,18 +1222,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controller/indexMgr.min.js">
+    <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="3699" selection-start-line="0" selection-start-column="3699" selection-end-line="0" selection-end-column="3699" />
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controller/licenseMgr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.633333">
+          <caret line="202" column="4" selection-start-line="3" selection-start-column="0" selection-end-line="202" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5012854">
-          <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.36821705">
+          <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />

@@ -38,7 +38,7 @@ pk10.homeMgr = function () {
             initRefreshBtn();
             refreshCurrentAwardInfos();
             refreshTable();
-            homeService.strartTimedUpdateData();
+            homeService.startTimedUpdateData();
         },
         refreshTable: refreshTable
     };

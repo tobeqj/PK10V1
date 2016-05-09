@@ -5,6 +5,17 @@ var pk10 = pk10 || {};
 pk10.licenseMgr = function(){
     var _exirationDate;
 
+    var getExirationDate = function(){
+        if(_exirationDate) return _exirationDate;
+        var license = localStorage.license;
+        if(!license) return;
+        var checkResult = licenseService.checkLicense(license);
+        if(checkResult.exirationDate){
+            updateExirationDate(checkResult.exirationDate);
+        }
+        return _exirationDate;
+    };
+
     var updateExirationDate = function(exirationDate){
         _exirationDate = exirationDate;
         config.exirationDate = exirationDate;
@@ -122,8 +133,9 @@ pk10.licenseMgr = function(){
         };
 
         var initDialogText = function(){
+            var exirationDate = getExirationDate();
             $('#renewed-title').text(pk10.msgs.renewedDialogTitle);
-            $('#renewed-content').text(pk10.msgs.renewedDialogContent.format(_exirationDate.format('yyyy-MM-dd'), device.uuid, config.qq));
+            $('#renewed-content').text(pk10.msgs.renewedDialogContent.format(exirationDate.format('yyyy-MM-dd'), device.uuid, config.qq));
             $('#renewed-licenseLabel').text(pk10.msgs.licenseInputLabel);
             $('#renewed-btnCopyUuid').text(pk10.msgs.btnCopyUuid);
             $('#renewed-btnRegister').text(pk10.msgs.btnRegister);
@@ -168,17 +180,11 @@ pk10.licenseMgr = function(){
 
     // 过期检测
     timedTaskService.addTask(function(){
-        if(_exirationDate){
+        var exirationDate = getExirationDate();
+        if(exirationDate){
             if(!registerDialog.isOpenning && !renewedDialog.isOpenning && new Date().getTime() >= _exirationDate.getTime()){
                 window.plugins.toast.showShortCenter(pk10.msgs.licenseIsExpired);
                 renewedDialog.openDialog(true);
-            }
-        } else {
-            var license = localStorage.license;
-            if(!license) return;
-            var checkResult = licenseService.checkLicense(license);
-            if(checkResult.exirationDate){
-                updateExirationDate(checkResult.exirationDate);
             }
         }
     });

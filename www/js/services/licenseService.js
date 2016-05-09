@@ -30,27 +30,31 @@ var licenseService = function(){
         return decryptText;
     };
 
+    var checkLicense = function(license){
+        var decryptText = getDecryptText(license);
+        var licenseInfo;
+        try{
+            licenseInfo = JSON.parse(decryptText)
+        }catch(e) {
+            licenseInfo = {};
+        }
+        var result = new LicenseCheckResult();
+        if(!licenseInfo.uuid || !licenseInfo.expirationDate) {
+            result.isValid = false;
+        } else if(licenseInfo.uuid !== device.uuid) {
+            result.isValid = false;
+        } else{
+            var expirationDate = new Date(licenseInfo.expirationDate);
+            result.isValid = new Date().getTime() < expirationDate.getTime();
+            result.exirationDate = expirationDate;
+        }
+
+        return result;
+    };
+
     var properties = {
         checkLicense: function(license){
-            var decryptText = getDecryptText(license);
-            var licenseInfo;
-            try{
-                licenseInfo = JSON.parse(decryptText)
-            }catch(e) {
-                licenseInfo = {};
-            }
-            var result = new LicenseCheckResult();
-            if(!licenseInfo.uuid || !licenseInfo.expirationDate) {
-                result.isValid = false;
-            } else if(licenseInfo.uuid !== device.uuid) {
-                result.isValid = false;
-            } else{
-                var expirationDate = new Date(licenseInfo.expirationDate);
-                result.isValid = new Date().getTime() < expirationDate.getTime();
-                result.exirationDate = expirationDate;
-            }
-
-            return result;
+            return checkLicense(license);
         }
     };
 

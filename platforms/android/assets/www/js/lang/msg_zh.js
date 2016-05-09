@@ -23,7 +23,7 @@ pk10.msgs = {
     currentAwardDataTitle: "最新开奖数据：",
     currentPeriodNumber: "第{0}期",
     nextAwardTimeSpan: "离下期开奖时间还剩：",
-    waitingAwardResult: "等待开奖结果......",
+    waitingAwardResult: "正在等待开奖结果......",
     getCurrentAwardDataFailed: "获取本期开奖数据失败！",
     getAwardDataFailed: "获取开奖数据失败，请检查网络是否开启。",
     noAwardRecord: "没有开奖记录！",
