@@ -32,10 +32,12 @@ pk10.historyMgr = function(){
             theme: "wp-light",
             mode: "scroller",
             display: "modal",
-            lang: "zh"
+            lang: "zh",
+            dateFormat: "yyyy-mm-dd",
+            endYear: "2050"
         });
         var defaultDate = new Date().addDays(-1);
-        $("#date").val(defaultDate.format("yyyy/MM/dd"));
+        $("#date").val(defaultDate.format("yyyy-MM-dd"));
     };
 
     var properties = {
