@@ -1,7 +1,8 @@
 ﻿var awardDataService = function() {
     //var url1 = "http://www.cp686.cc/pk10/getPk10AwardTimes.do?ajaxhandler=GetPk10AwardTimes";
-    var url1 = "http://www.cp686.cc/pk10/getPk10AwardData.do?ajaxhandler=GetPk10AwardData";
-    var url2 = "http://www.cp686.cc/pk10/kaijiang.do?date=";
+    //var url1 = "http://www.cp686.cc/pk10/getPk10AwardData.do?ajaxhandler=GetPk10AwardData";
+    var url1 = "http://www.cp166.cc/pk10/getPk10AwardData.do?ajaxhandler=GetPk10AwardData";
+    var url2 = "http://www.cp166.cc/pk10/kaijiang.do?date=";
     var dan = [1, 3, 5, 7, 9];
     var shuang = [2, 4, 6, 8, 10];
     var da = [6, 7, 8, 9, 10];
